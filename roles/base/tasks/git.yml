@@ -1,0 +1,6 @@
+---
+- name: get repo
+  git:
+    repo: 'https://foosball.example.org/path/to/repo.git'
+    dest: /tmp
+    #version: release-0.22
