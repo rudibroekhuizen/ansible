@@ -2,3 +2,5 @@
 # tasks file for base
 - name: Install common packages
   include: packages.yml
+- name: git
+  include: git.yml
