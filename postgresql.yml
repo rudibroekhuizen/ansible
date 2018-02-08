@@ -1,3 +1,7 @@
-- hosts: db
+---
+- hosts: all
+  become: yes
+#  vars_files:
+#    - ./vars.yml
   roles:
-    - {role: postgresql}
+    - postgresql
