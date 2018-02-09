@@ -5,3 +5,8 @@
   include: packages.yml
   tags:
     - packages
+
+- name: Download git repo's
+  include: git.yml
+  tags:
+    - git_repos
