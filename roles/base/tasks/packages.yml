@@ -1,5 +1,9 @@
 ---
-- name: Install the package "htop"
-  apt:
-    name: htop
-    state: present
+- name: Install packages
+  package:
+    name: "{{ item }}"
+    state: latest
+    with_items:
+      - htop
+      - cowsay
+      - mc
