@@ -1,7 +1,5 @@
 ---
-- hosts: all
+- hosts: postgresql-master
   become: yes
-#  vars_files:
-#    - ./vars.yml
   roles:
     - postgresql
