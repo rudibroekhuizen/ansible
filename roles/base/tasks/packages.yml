@@ -3,7 +3,7 @@
   package:
     name: "{{ item }}"
     state: latest
-    with_items:
-      - htop
-      - cowsay
-      - mc
+  with_items:
+    - htop
+    - cowsay
+    - mc
