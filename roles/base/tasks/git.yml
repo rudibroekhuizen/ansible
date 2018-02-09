@@ -1,6 +1,9 @@
 ---
-- name: get repo
+- name: download git repo's
   git:
-    repo: 'https://foosball.example.org/path/to/repo.git'
-    dest: /tmp
+    repo: 'https://github.com/shirou/cowsay'
+    dest: /home/ansible/ansible/roles/cowsay
     #version: release-0.22
+  git:
+    repo: 'https://github.com/geerlingguy/ansible-role-ntp'
+    dest: /home/ansible/ansible/roles/ansible-role-ntp
