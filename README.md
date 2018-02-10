@@ -1,4 +1,4 @@
-# ansible-base
+# ansible
 
 To set up test environment:
 
