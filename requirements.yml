@@ -2,5 +2,8 @@
 # http://docs.ansible.com/galaxy.html#installing-multiple-roles-from-a-file
 # Install with: `ansible-galaxy install -r requirements.yml`
 
-- name: opendaylight
-  src: https://github.com/dfarrell07/ansible-opendaylight
+- name: PostgreSQL
+  src: ANXS.postgresql
+
+#- name: opendaylight
+#  src: https://github.com/dfarrell07/ansible-opendaylight
