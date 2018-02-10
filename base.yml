@@ -1,3 +1,4 @@
+# playbook base
 ---
 - hosts: all
   become: yes
