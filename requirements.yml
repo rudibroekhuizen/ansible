@@ -5,5 +5,5 @@
 - name: PostgreSQL
   src: ANXS.postgresql
 
-#- name: opendaylight
-#  src: https://github.com/dfarrell07/ansible-opendaylight
+- name: MySQL
+  src: geerlingguy.mysql
