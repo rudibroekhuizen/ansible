@@ -1,6 +1,6 @@
 # Ansible
 
-Ansible departures
+Ansible point of departure.
 
 #### To set up test environment:
 
