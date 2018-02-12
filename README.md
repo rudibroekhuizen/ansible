@@ -12,6 +12,13 @@ cd ansible/vagrant
 vagrant up
 ```
 
+#### Install required roles
+```bash
+ansible-galaxy install -r requirements.yml
+```
+
+
+
 ```bash
 ansible-playbook -i inventory base.yml --tags=packages
 ```
