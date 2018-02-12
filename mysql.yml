@@ -1,0 +1,6 @@
+# playbook mysql
+---
+- hosts: mysql
+  become: yes
+  roles:
+    - geerlingguy.mysql
