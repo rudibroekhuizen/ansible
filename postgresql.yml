@@ -1,6 +1,7 @@
 # playbook postgresql
 ---
-- hosts: postgresql
+- name: Install PostgreSQL
+  hosts: postgresql
   become: yes
   roles:
     - PostgreSQL
