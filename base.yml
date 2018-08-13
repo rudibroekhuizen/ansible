@@ -1,6 +1,7 @@
 # playbook base
 ---
-- hosts: all
+- name: Common packages and more
+  hosts: all
   become: yes
   roles:
     - base
