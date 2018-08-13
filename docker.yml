@@ -1,6 +1,7 @@
 # playbook Docker
 ---
-- hosts: local
+- name: Install Docker on localhost
+  hosts: localhost
   become: yes
   roles:
     - geerlingguy.docker
