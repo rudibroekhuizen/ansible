@@ -26,4 +26,4 @@ echo -e '192.168.56.6\n192.168.56.7' >> /etc/ansible/hosts
 sed -i 's/#host_key_checking/host_key_checking/g' /etc/ansible/ansible.cfg
 
 # Download Ansible base role
-su $ANSIBLE_USER -c "git clone https://github.com/rudibroekhuizen/ansible-base ~/ansible"
+su $ANSIBLE_USER -c "git clone https://github.com/rudibroekhuizen/ansible ~/ansible"
