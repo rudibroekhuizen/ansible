@@ -1,6 +1,6 @@
 # playbook Docker
 ---
-- hosts: docker
+- hosts: local
   become: yes
   roles:
     - geerlingguy.docker
