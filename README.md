@@ -10,6 +10,16 @@ cd ansible/vagrant
 vagrant up
 ```
 
+#### Login to vb-01
+```bash
+vagrant ssh vb-01
+```
+
+#### Change to user ansible
+```bash
+su ansible
+```
+
 #### Install required roles:
 ```bash
 ansible-galaxy install -r requirements.yml
