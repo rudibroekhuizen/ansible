@@ -14,11 +14,10 @@ vagrant up
 ```bash
 ansible-galaxy install -r requirements.yml
 ```
-
 Roles managed by requirements.yml, find them in the .ansible folder.
 
 
 
 ```bash
-ansible-playbook -i inventory base.yml --tags=packages
+ansible-playbook base.yml
 ```
