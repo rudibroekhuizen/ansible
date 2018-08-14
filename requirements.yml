@@ -2,11 +2,11 @@
 # http://docs.ansible.com/galaxy.html#installing-multiple-roles-from-a-file
 # Install with: `ansible-galaxy install -r requirements.yml`
 
-- name: PostgreSQL
+- name: postgresql
   src: ANXS.postgresql
 
-- name: MySQL
+- name: mysql
   src: geerlingguy.mysql
 
-- name: Docker
+- name: docker
   src: geerlingguy.docker
