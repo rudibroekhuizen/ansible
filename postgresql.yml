@@ -4,4 +4,4 @@
   hosts: postgresql
   become: yes
   roles:
-    - PostgreSQL
+    - postgresql
