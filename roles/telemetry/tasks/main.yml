@@ -18,3 +18,10 @@
     name: jq
     state: latest
     update_cache: yes
+
+- name: Collect
+  cron:
+    name: "check dirs"
+    minute: "0"
+    hour: "0"
+    job: "net show int json | jq -c . >> /var/log/nclu-int.json"
