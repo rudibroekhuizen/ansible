@@ -2,5 +2,12 @@
 localhost ansible_connection=local
 
 [postgresql]
-postgresql-1 ansible_ssh_host=192.168.56.6
-postgresql-2 ansible_ssh_host=192.168.56.7
+postgresql-1 ansible_host=192.168.56.6
+postgresql-2 ansible_host=192.168.56.7
+
+[leafs]
+leaf01
+leaf02
+
+[cumulus:children]
+leafs
