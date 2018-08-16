@@ -1,5 +1,4 @@
 ---
-
 - name: Set jessie source list in apt
   apt_repository: 
     repo: "deb ftp://ftp.gr.debian.org/debian/ jessie main"
