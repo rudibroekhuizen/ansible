@@ -4,14 +4,14 @@
     repo: "deb ftp://ftp.gr.debian.org/debian/ jessie main"
     state: present
     mode: 0644
-  when: ansible_lsb.codename == "jessie"
+#  when: ansible_lsb.codename == "jessie"
 
 - name: Set jessie source list in apt
   apt_repository: 
     repo: "deb-src ftp://ftp.gr.debian.org/debian/ jessie main"
     state: present
     mode: 0644
-  when: ansible_lsb.codename == "jessie"
+#  when: ansible_lsb.codename == "jessie"
 
 - name: Install jq and update apt's cache
   apt:
@@ -19,9 +19,7 @@
     state: latest
     update_cache: yes
 
-- name: Collect interface metrics
+- name: Collect interface metrics, run every minute
   cron:
     name: "check dirs"
-    minute: "0"
-    hour: "0"
     job: "net show int json | jq -c '. | to_entries[] | {"interface": .key, "value": .value} | . + .value | del(.value) | . + .iface_obj | del(.iface_obj) | . + .counters | del(.counters)' >> /var/log/nclu-int.json"
