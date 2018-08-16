@@ -1,8 +1,5 @@
 ---
-
-- hosts: all
+- hosts: cumulus
   become: true
   roles:
   - telemetry
-
----
