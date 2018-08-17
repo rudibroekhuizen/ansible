@@ -22,4 +22,5 @@
 - name: Collect interface metrics, run every minute
   cron:
     name: "check dirs"
-    job: "net show int json | jq -c '. | to_entries[] | {'interface': .key, 'value': .value} | . + .value | del(.value) | . + .iface_obj | del(.iface_obj) | . + .counters | del(.counters)' >> /var/log/nclu-int.json"
+    job: "net show int json | jq -c '. | to_entries[] | {'interface': .key, 'value': .value} | . + .value | del(.value) | . + .iface_obj | del(.iface_obj) | . + .counters | del(.counters) | if .lldp != null then . + .lldp[] | del(.lldp) | del(.system_descr) else . end'
+ >> /var/log/nclu-int.json"
