@@ -24,3 +24,9 @@
     name: "check dirs"
     job: "net show int json | jq -c '. | to_entries[] | {'interface': .key, 'value': .value} | . + .value | del(.value) | . + .iface_obj | del(.iface_obj) | . + .counters | del(.counters) | if .lldp != null then . + .lldp[] | del(.lldp) | del(.system_descr) else . end'
  >> /var/log/nclu-int.json"
+
+- name: Create rsyslog config file to forward nclu-int.json using rsyslog
+  copy:
+    src: 60-nclu-int.conf
+    dest: /etc/rsyslog.d/60-nclu-int.conf
+  notify: restart rsyslog
