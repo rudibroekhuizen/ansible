@@ -1,6 +1,6 @@
 ---
 - hosts: cumulus-leafs
-  gather_facts: no
+  gather_facts: false
   become: true
   roles:
     - telemetry
