@@ -1,5 +1,5 @@
 ---
-- hosts: cumulus-leafs
+- hosts: cumulus
   gather_facts: false
   become: true
   roles:
