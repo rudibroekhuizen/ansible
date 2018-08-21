@@ -1,4 +1,10 @@
 ---
+- hosts: rsyslog-clients
+  gather_facts: false
+  become: true
+  roles:
+    - rsyslog-client
+
 - hosts: rsyslog-servers
   gather_facts: false
   become: true
