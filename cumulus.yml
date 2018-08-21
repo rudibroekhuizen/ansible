@@ -1,6 +1,6 @@
 ---
-- hosts: cumulus
+- hosts: rsyslog-server
   gather_facts: false
   become: true
   roles:
-    - ansible-role-cumulus
+    - rsyslog-server
