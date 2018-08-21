@@ -16,7 +16,7 @@ cumulus-leafs
 cumulus-spines
 
 [rsyslog-clients:vars]
-rsyslog_server=192.160.0.254
+rsyslog_server=192.160.0.252
 
 [cumulus-leafs]
 leaf01
