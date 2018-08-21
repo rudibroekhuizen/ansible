@@ -9,6 +9,6 @@
   gather_facts: false
   become: true
   roles:
-    - rsyslog-client
+    - cumulus-rsyslog
 
 
