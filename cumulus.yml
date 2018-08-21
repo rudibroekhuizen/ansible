@@ -1,5 +1,5 @@
 ---
-- hosts: rsyslog-server
+- hosts: rsyslog-servers
   gather_facts: false
   become: true
   roles:
