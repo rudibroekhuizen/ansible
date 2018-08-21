@@ -5,7 +5,7 @@ localhost ansible_connection=local
 postgresql-1 ansible_host=192.168.56.6
 postgresql-2 ansible_host=192.168.56.7
 
-[cumulus-rsyslog-server]
+[rsyslog-server]
 rsyslog-server
 
 [cumulus-leafs]
