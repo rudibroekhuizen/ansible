@@ -13,6 +13,7 @@ enable_syslog_reception=true
 
 [rsyslog-clients:children]
 cumulus-leafs
+cumulus-spines
 
 [rsyslog-clients:vars]
 rsyslog_server=192.160.0.254
@@ -21,5 +22,10 @@ rsyslog_server=192.160.0.254
 leaf01
 leaf02
 
+[cumulus-spines]
+spine01
+spine02
+
 [cumulus-all:children]
 cumulus-leafs
+cumulus-spines
