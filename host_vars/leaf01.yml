@@ -3,4 +3,4 @@ hostname: leaf01
 
 interface:
   - swp52 ip address 192.168.1.2/24
-  - swp51-swp52 link speed 10000
+  - swp51-52 link speed 10000
