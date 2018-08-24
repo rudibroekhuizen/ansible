@@ -10,5 +10,4 @@
   become: true
   roles:
     - cumulus-rsyslog
-
-
+    - cumulus-interface
