@@ -11,6 +11,8 @@
   roles:
     - cumulus-rsyslog
     - cumulus-interface
-  vars:                     # override vars in host_vars
+
+# override vars in host_vars:
+  vars:                     
     interface:
-      - swp3 ip address 192.168.1.1/24
+      - swp51 ip address 192.168.1.1/24
