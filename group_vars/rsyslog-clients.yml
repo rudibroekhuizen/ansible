@@ -1,0 +1,12 @@
+logrotate_scripts:
+  - name: nclu-int.json
+    path: /var/log/nclu-int.json
+    options:
+      - daily
+      - weekly
+      - size 25M
+      - rotate 7
+      - missingok
+      - compress
+      - delaycompress
+      - copytruncate
