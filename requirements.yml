@@ -13,3 +13,6 @@
 
 - name: docker
   src: geerlingguy.docker
+
+- name: logrotate
+  src: nickhammond.logrotate
