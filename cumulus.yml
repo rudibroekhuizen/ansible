@@ -11,6 +11,7 @@
   roles:
     - cumulus-rsyslog
     - cumulus-interface
+    - logrotate
 
 # override vars in host_vars/group_vars:
   vars:                     
