@@ -1,7 +1,7 @@
 # playbook base
 ---
 - name: Common packages and more
-  hosts: all
+  hosts: localhost
   become: yes
   tasks:
   - name: print out the hostname of target
