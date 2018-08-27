@@ -1,3 +1,4 @@
+rsyslog_server: 192.168.0.252
 logrotate_scripts:
   - name: nclu-int
     path: /var/log/nclu-int.json
