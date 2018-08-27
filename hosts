@@ -15,9 +15,6 @@ enable_syslog_reception=true
 cumulus-leafs
 cumulus-spines
 
-[rsyslog-clients:vars]
-rsyslog_server=192.168.0.252
-
 [cumulus-leafs]
 leaf01
 leaf02
