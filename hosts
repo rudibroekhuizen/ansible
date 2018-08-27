@@ -10,7 +10,7 @@ psql-slave
 
 
 [rsyslog-servers]
-oob-mgmt-telemetry
+rsyslog-server
 
 [rsyslog-clients:children]
 cumulus-leafs
