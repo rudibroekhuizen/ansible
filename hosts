@@ -8,9 +8,6 @@ psql-slave
 [rsyslog-servers]
 oob-mgmt-telemetry ansible_host=192.168.0.254
 
-[rsyslog-servers:vars]
-enable_syslog_reception=true
-
 [rsyslog-clients:children]
 cumulus-leafs
 cumulus-spines
