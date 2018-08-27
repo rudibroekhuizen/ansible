@@ -1,16 +1,22 @@
 [local]
 localhost ansible_connection=local
 
+
+
 [postgresql]
 psql-master
 psql-slave
 
+
+
 [rsyslog-servers]
-oob-mgmt-telemetry ansible_host=192.168.0.254
+oob-mgmt-telemetry
 
 [rsyslog-clients:children]
 cumulus-leafs
 cumulus-spines
+
+
 
 [cumulus-leafs]
 leaf01
