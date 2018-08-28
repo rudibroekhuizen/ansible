@@ -1,0 +1,55 @@
+- name: Modify pfsense xml config files
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - name: Setup test files
+      copy:
+        src: /tmp/original.xml
+        dest: /tmp/result.xml
+
+    - name: Set hostname
+      xml:
+        path: /tmp/result.xml
+        xpath: /pfsense/system/hostname
+        value: foppe_is_een_aap
+      register: result
+
+    - debug:
+        var: result
+
+    - name: Read hostname
+      xml:
+        path: /tmp/result.xml
+        xpath: /pfsense/system/hostname
+        content: text
+      register: read_hostname
+
+    - name: Show attribute value
+      debug:
+        var: read_hostname.matches[0]
+
+    - name: Add users
+      xml:
+        path: /tmp/result.xml
+        xpath: /pfsense/system
+        add_children:
+          - user: "klaas"
+          - user: "piet"
+        pretty_print: yes
+
+    - name: Add child element with xml format
+      xml:
+        path: /tmp/result.xml
+        xpath: /pfsense/system
+        input_type: xml
+        add_children: 
+          - "<user><scope>jan</scope><password>secret</password><name>jan</name><descr>welcome</descr><uid>2010</uid></user>"
+        pretty_print: yes
+
+#    - name: Add users
+#      xml:
+#        path: /tmp/result.xml
+#        xpath: /pfsense/system/user
+#        value: henk
+#      pretty_print: yes
