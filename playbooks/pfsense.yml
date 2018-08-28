@@ -1,3 +1,6 @@
+# https://github.com/cmprescott/ansible-xml
+# https://docs.ansible.com/ansible/2.4/xml_module.html
+
 - name: Modify pfsense xml config files
   hosts: localhost
   gather_facts: false
