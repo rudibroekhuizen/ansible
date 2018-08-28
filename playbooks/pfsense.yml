@@ -43,12 +43,24 @@
 
     - name: Add child element with xml format
       xml:
-        path: /tmp/result.xml
+        path: /tmp/pfsense.xml
         xpath: /pfsense/system
         input_type: xml
-        add_children: 
-          - "<user><scope>jan</scope><password>secret</password><name>jan</name><descr>welcome</descr><uid>2010</uid></user>"
+        add_children: "{{ item }}"
         pretty_print: yes
+      with_items: 
+        - "<user>\
+          <scope>nick</scope>\
+          <password>36578383838736</password>\
+          </user>"
+        - "<user>\
+          <scope>ronald</scope>\
+          <password>38568198576336</password>\
+          </user>"
+
+
+
+
 
 #    - name: Add users
 #      xml:
