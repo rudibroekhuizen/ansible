@@ -1,13 +1,12 @@
 [local]
 localhost ansible_connection=local
 
-
+[opnsense]
+localhost
 
 [postgresql]
 psql-master
 psql-slave
-
-
 
 [rsyslog-servers]
 rsyslog-server
@@ -15,8 +14,6 @@ rsyslog-server
 [rsyslog-clients:children]
 cumulus-leafs
 cumulus-spines
-
-
 
 [cumulus-leafs]
 leaf01
