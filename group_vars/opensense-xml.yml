@@ -1,0 +1,14 @@
+users:
+  - name: rudi.broekhuizen
+    settings:
+      descr: "Rudi Broekhuizen"
+      scope: "user"
+      groupname: "admins"
+      password: "secret"
+
+  - name: foppe.pieters
+    settings:
+      descr: "Foppe Pieters"
+      scope: "user"
+      groupname: "admins"
+      password: "secret"
