@@ -3,8 +3,6 @@ cl_hostname: leaf01
 
 cl_license: user@company.com|thequickbrownfoxjumpsoverthelazydog312
 
-cl_hostname: leaf01
-
 cl_interface:
   swp1:
     ip:
@@ -27,6 +25,3 @@ cl_vlan:
     ip:
       adress:
         - 10.10.10.0/24
-
-
-
