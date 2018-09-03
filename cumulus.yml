@@ -10,7 +10,6 @@
   become: true
   roles:
     - cumulus-rsyslog
-    - cumulus-interface
     - logrotate
 
 - hosts: cumulus-leafs
