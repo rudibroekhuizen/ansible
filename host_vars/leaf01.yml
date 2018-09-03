@@ -12,6 +12,9 @@ cl_interface:
   swp2:
     bridge:
       trunk:
+        vlans:
+          - 1-5
+          - 10,12
 
 cl_bond:
   uplink:
