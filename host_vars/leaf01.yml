@@ -5,25 +5,6 @@ cl_license: user@company.com|thequickbrownfoxjumpsoverthelazydog312
 
 cl_hostname: leaf01
 
-cl_time_ntp_servers:
-  - 0.cumulusnetworks.pool.ntp.org iburst
-  - 1.cumulusnetworks.pool.ntp.org 
-  - 2.cumulusnetworks.pool.ntp.org 
-  - 3.cumulusnetworks.pool.ntp.org 
-
-cl_time_ntp_source: eth1
-
-cl_locales:
-  - en_US.UTF-8 UTF-8
-  - fr_FR.UTF-8 UTF-8
-
-cl_dns_nameserver:
-  ipv4:
-    - 9.9.9.9
-    - 1.1.1.1
-  ipv6:
-    - 2620:fe::fe
-
 cl_interface:
   swp1:
     ip:
