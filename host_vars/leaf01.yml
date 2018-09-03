@@ -28,28 +28,5 @@ cl_vlan:
       adress:
         - 10.10.10.0/24
 
-cl_snmp:
-  listening-address:
-    ip:
-      - 192.168.1.10
-      - 192.168.1.20
-  readonly-community:
-    my_rocommunity:
-      access: any
 
-cl_commands:
-  add:
-    vrf: mgmt
-  del:
-    snmp-server: all
 
-cl_syslog:
-  ipv4:
-    - ip: 192.168.1.10
-      port: 5000
-      proto: tcp
-    - ip: 192.168.1.20
-      port: 6000
-  ipv6:
-    - ip: 2001:db8::1
-      port: 5000
