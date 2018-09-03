@@ -9,7 +9,7 @@ cl_interface:
       address: 192.168.1.1/24
     link:
       speed: 100
-  swp2:
+  swp48:
     bridge:
       trunk:
         vlans:
