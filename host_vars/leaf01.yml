@@ -1,4 +1,74 @@
 ---
-interface:
-  - swp52 ip address 192.168.1.2/24
-  - swp51-52 link speed 10000
+cl_hostname: leaf01
+
+cl_license: user@company.com|thequickbrownfoxjumpsoverthelazydog312
+
+cl_hostname: leaf01
+
+cl_time_ntp_servers:
+  - 0.cumulusnetworks.pool.ntp.org iburst
+  - 1.cumulusnetworks.pool.ntp.org 
+  - 2.cumulusnetworks.pool.ntp.org 
+  - 3.cumulusnetworks.pool.ntp.org 
+
+cl_time_ntp_source: eth1
+
+cl_locales:
+  - en_US.UTF-8 UTF-8
+  - fr_FR.UTF-8 UTF-8
+
+cl_dns_nameserver:
+  ipv4:
+    - 9.9.9.9
+    - 1.1.1.1
+  ipv6:
+    - 2620:fe::fe
+
+cl_interface:
+  swp1:
+    ip:
+      address: 192.168.1.1/24
+    link:
+      speed: 100
+  swp2:
+    bridge:
+      trunk:
+
+cl_bond:
+  uplink:
+    bond:
+      slaves:
+        - swp1
+        - swp2
+
+cl_vlan:
+  100:
+    ip:
+      adress:
+        - 10.10.10.0/24
+
+cl_snmp:
+  listening-address:
+    ip:
+      - 192.168.1.10
+      - 192.168.1.20
+  readonly-community:
+    my_rocommunity:
+      access: any
+
+cl_commands:
+  add:
+    vrf: mgmt
+  del:
+    snmp-server: all
+
+cl_syslog:
+  ipv4:
+    - ip: 192.168.1.10
+      port: 5000
+      proto: tcp
+    - ip: 192.168.1.20
+      port: 6000
+  ipv6:
+    - ip: 2001:db8::1
+      port: 5000
