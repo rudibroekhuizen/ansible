@@ -2,8 +2,8 @@
 # http://docs.ansible.com/galaxy.html#installing-multiple-roles-from-a-file
 # Install with: `ansible-galaxy install -r requirements.yml`
 
-- name: ansible-role-cumulus
-  src: https://github.com/rudibroekhuizen/ansible-role-cumulus
+- name: cumuluslinux
+  src: https://github.com/maxlareo/ansible-cumuluslinux
 
 - name: postgresql
   src: ANXS.postgresql
