@@ -17,7 +17,7 @@
   gather_facts: false
   become: true
   roles:
-    - cumuluxlinux
+    - cumuluslinux
 
 # override vars in host_vars/group_vars:
   vars:                     
