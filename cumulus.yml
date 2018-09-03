@@ -13,6 +13,12 @@
     - cumulus-interface
     - logrotate
 
+- hosts: cumulus-leafs
+  gather_facts: false
+  become: true
+  roles:
+    - cumuluxlinux
+
 # override vars in host_vars/group_vars:
   vars:                     
     interface:
