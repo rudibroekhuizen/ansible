@@ -1,4 +1,4 @@
 ---
 ansible_host: 192.168.1.1
 ansible_user: root
-ansible_ssh_pass=opnsense
+ansible_ssh_pass: opnsense
