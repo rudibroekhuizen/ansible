@@ -1,5 +1,5 @@
 ---
-- hosts: local
+- hosts: opnsense
   become: yes
   roles:
     - opnsense-xml
