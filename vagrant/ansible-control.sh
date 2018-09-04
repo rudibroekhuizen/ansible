@@ -15,8 +15,10 @@ mkdir -p /home/$ANSIBLE_USER/.ssh
 echo "$ANSIBLE_USER ALL=NOPASSWD:ALL" > /etc/sudoers.d/$ANSIBLE_USER
 
 # Set up keys
-yes | ssh-keygen -t rsa -f /vagrant/id_rsa -N ''
-mv /vagrant/id_rsa /home/$ANSIBLE_USER/.ssh
+yes | ssh-keygen -t rsa -f /tmp/id_rsa -N ''
+mv /tmp/id_rsa /home/$ANSIBLE_USER/.ssh
+cp /tmp/ida_rsa.pub /vagrant
+
 chown -R $ANSIBLE_USER:$ANSIBLE_USER /home/$ANSIBLE_USER/.ssh
 
 # Add hosts to hosts file
