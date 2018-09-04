@@ -1,8 +1,8 @@
 [local]
 localhost ansible_connection=local
 
-[opnsense]
-localhost
+[group-opnsense]
+opnsense
 
 [postgresql]
 psql-master
