@@ -2,7 +2,7 @@
 localhost ansible_connection=local
 
 [opnsense-group]
-opnsense
+opnsense01
 
 [postgresql]
 psql-master
