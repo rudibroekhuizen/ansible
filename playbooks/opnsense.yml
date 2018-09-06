@@ -13,6 +13,13 @@
         settings:
           - key: kc
             value: kc 
+    dns:
+      - name: dnsserver
+        settings:
+          - key: dnsserver
+            value: 8.8.8.8
+          - key: dnsserver
+            value: 4.4.4.4
 
   tasks:
   - name: Download OPNsense XML sample config
@@ -21,11 +28,11 @@
       dest: /tmp/config.xml
 
   - name: Debug
-      debug:
-        msg: "Debug: name={{ item.0.name }} key={{ item.1.key}} value={{ item.1.value }}"
-      with_subelements:
-        - "{{ users }}"
-        - settings
+    debug:
+      msg: "Debug: name={{ item.0.name }} key={{ item.1.key}} value={{ item.1.value }}"
+    with_subelements:
+      - "{{ users }}"
+      - settings
 
   - name: Modify users
     delegate_to: localhost
@@ -36,4 +43,15 @@
       pretty_print: yes
     with_subelements:
       - "{{ users }}"
+      - settings
+
+  - name: DNS
+    delegate_to: localhost
+    xml:
+      path: /tmp/config.xml
+      xpath: /opnsense/system/[dnsserver/text()="{{ item.0.name }}"]/{{ item.1.key }}
+      value: "{{ item.1.value }}"
+      pretty_print: yes
+    with_subelements:
+      - "{{ dns }}"
       - settings
