@@ -17,9 +17,9 @@
       - name: dnsserver
         settings:
           - key: dnsserver
-            value: 8.8.8.8
+            value: "8.8.8.8"
           - key: dnsserver
-            value: 4.4.4.4
+            value: "4.4.4.4"
 
   tasks:
   - name: Download OPNsense XML sample config
