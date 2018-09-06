@@ -25,5 +25,4 @@ groups:
       descr: "Support"
       gid: "2000"
       priv: "page-all"
-      password: "secret"
-      member: 1
+      member: "1"
