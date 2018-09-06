@@ -15,7 +15,12 @@
             value: kc 
 
   tasks:
-    - name: List children
+  - name: Download OPNsense XML sample config
+    get_url:
+      url: https://raw.githubusercontent.com/opnsense/core/master/src/etc/config.xml.sample
+      dest: /tmp/config.xml
+
+  - name: Debug
       debug:
         msg: "Debug: name={{ item.0.name }} key={{ item.1.key}} value={{ item.1.value }}"
       with_subelements:
@@ -30,4 +35,5 @@
       value: "{{ item.1.value }}"
       pretty_print: yes
     with_subelements:
-      "{{ users }}"
+      - "{{ users }}"
+      - settings
