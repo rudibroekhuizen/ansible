@@ -2,7 +2,7 @@
 ansible_become_method: sudo
 ansible_python_interpreter: '/usr/bin/env python2.7'
 
-users:
+opn_users:
   - name: rudi.broekhuizen
     settings:
       descr: "Rudi Broekhuizen"
@@ -19,7 +19,8 @@ users:
       password: "secret"
       uid: "2"
 
-groups:
+# do not user var named 'groups'; error in ansible
+opn_groups:
   - name: support
     settings:
       descr: "Support"
