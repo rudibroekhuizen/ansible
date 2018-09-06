@@ -9,6 +9,7 @@ users:
       scope: "user"
       groupname: "admins"
       password: "secret"
+      uid: "1"
 
   - name: foppe.pieters
     settings:
@@ -16,3 +17,13 @@ users:
       scope: "user"
       groupname: "admins"
       password: "secret"
+      uid: "2"
+
+groups:
+  - name: support
+    settings:
+      descr: "Support"
+      gid: "2000"
+      priv: "page-all"
+      password: "secret"
+      member: 1
