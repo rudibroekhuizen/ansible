@@ -1,0 +1,33 @@
+---
+- hosts: localhost
+  gather_facts: no
+  vars:
+    users:
+      - name: rudi.broekhuizen
+        settings:
+          - key: ka
+            value: ka
+          - key: kb
+            value: kb
+      - name: foppe.pieters
+        settings:
+          - key: kc
+            value: kc 
+
+  tasks:
+    - name: List children
+      debug:
+        msg: "Debug: name={{ item.0.name }} key={{ item.1.key}} value={{ item.1.value }}"
+      with_subelements:
+        - "{{ users }}"
+        - settings
+
+  - name: Modify users
+    delegate_to: localhost
+    xml:
+      path: /tmp/config.xml
+      xpath: /opnsense/system/user[name/text()="{{ item.0.name }}"]/{{ item.1.key }}
+      value: "{{ item.1.value }}"
+      pretty_print: yes
+    with_subelements:
+      "{{ users }}"
