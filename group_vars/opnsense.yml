@@ -5,25 +5,38 @@ ansible_python_interpreter: '/usr/bin/env python2.7'
 opn_users:
   - name: rudi.broekhuizen
     settings:
-      descr: "Rudi Broekhuizen"
-      scope: "user"
-      groupname: "admins"
-      password: "secret"
-      uid: "1"
+      - key: decr
+        value: "Rudi Broekhuizen"
+      - key: scope
+        value: user
+      - key: groupname
+        value: admins
+      - key: password
+        value: secret
+      - key: uid
+        value: 1
 
   - name: foppe.pieters
     settings:
-      descr: "Foppe Pieters"
-      scope: "user"
-      groupname: "admins"
-      password: "secret"
-      uid: "2"
+      - key: decr
+        value: "Foppe Pieters"
+      - key: scope
+        value: user
+      - key: groupname
+        value: admins
+      - key: password
+        value: secret
+      - key: uid
+        value: 2
 
-# do not user var named 'groups'; error in ansible
 opn_groups:
   - name: support
     settings:
-      descr: "Support"
-      gid: "2000"
-      priv: "page-all"
-      member: "1"
+      - key: descr
+        value: Support
+      - key: gid
+        value: 2000
+      - key: priv
+        value: page-all
+      - key: member
+        value: 1
