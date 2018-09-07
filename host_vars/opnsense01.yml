@@ -6,5 +6,5 @@ ansible_ssh_pass: opnsense
 opn_singles:
   - xpath: /opnsense/system
     settings:
-      hostname: "opnsense01"
-      domain: "naturalis.nl"
+      - hostname: "opnsense01"
+      - domain: "naturalis.nl"
