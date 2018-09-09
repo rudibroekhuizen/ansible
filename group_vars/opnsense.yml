@@ -5,8 +5,7 @@ ansible_python_interpreter: '/usr/bin/env python2.7'
 opn_users:
   - name: rudi.broekhuizen
     settings:
-      - key: decr
-        value: "Rudi Broekhuizen"
+      - { key: decr, value: "Rudi Broekhuizen" }
       - key: scope
         value: user
       - key: groupname
