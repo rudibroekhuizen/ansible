@@ -41,5 +41,5 @@ opn_groups:
         value: 2000
       - key: priv
         value: page-all
-      - key: member
-        value: 1
+      - member: 1
+      - member: 2
