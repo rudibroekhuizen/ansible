@@ -10,3 +10,15 @@ opn_singles:
         value: opnsense01
       - key: domain
         value: naturalis.nl
+
+opn_vlans:
+  - tag: 114
+    settings:
+      - key: if
+        value: em1
+      - key: tag
+        value: 114
+      - key: descr
+        value: "vlan 114"
+      - key: vlanif
+        value: em1_vlan114
