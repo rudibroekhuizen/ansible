@@ -122,3 +122,23 @@ opn_vlans:
         value: "dw2-off-119"
       - key: vlanif
         value: em1_vlan119
+
+opn_virtualip:
+  - vhid: 114
+    settings:
+      - key: type
+        value: single
+      - key: subnet_bits
+        value: 16
+      - key: mode
+        value: carp
+      - key: interface
+        value: opt1
+      - key: subnet
+        value: 10.114.0.1
+      - key: advskew
+        value: 0
+      - key: advbase
+        value: 1
+      - key: password
+        value: opnsense
