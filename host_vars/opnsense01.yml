@@ -26,8 +26,6 @@ opn_interfaces:
 opn_vlans:
   - tag: 114
     settings:
-      - key: tag
-        value: 114
       - key: if
         value: em1
       - key: descr
@@ -36,8 +34,6 @@ opn_vlans:
         value: em1_vlan114
   - tag: 115
     settings:
-      - key: tag
-        value: 115
       - key: if
         value: em1
       - key: descr
@@ -46,8 +42,6 @@ opn_vlans:
         value: em1_vlan115
   - tag: 116
     settings:
-      - key: tag
-        value: 116
       - key: if
         value: em1
       - key: descr
@@ -56,8 +50,6 @@ opn_vlans:
         value: em1_vlan116
   - tag: 117
     settings:
-      - key: tag
-        value: 117
       - key: if
         value: em1
       - key: descr
@@ -66,8 +58,6 @@ opn_vlans:
         value: em1_vlan117
   - tag: 118
     settings:
-      - key: tag
-        value: 118
       - key: if
         value: em1
       - key: descr
@@ -76,8 +66,6 @@ opn_vlans:
         value: em1_vlan118
   - tag: 119
     settings:
-      - key: tag
-        value: 119
       - key: if
         value: em1
       - key: descr
