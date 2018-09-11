@@ -7,7 +7,7 @@ opn_singles:
   - xpath: /opnsense/system
     settings:
       - key: hostname
-        value: opnsense02
+        value: dw2-fwl-2
       - key: domain
         value: naturalis.nl
 
