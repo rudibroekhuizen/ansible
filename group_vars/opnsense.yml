@@ -32,7 +32,25 @@ opn_users:
       - key: uid
         value: 2
 
+  - name: nick.stolk
+    settings:
+      - key: decr
+        value: "Nick Stolk"
+      - key: scope
+        value: user
+      - key: groupname
+        value: admins
+      - key: password
+        value: secret
+      - key: uid
+        value: 3
+
 opn_groups:
+  - name: admins
+    settings:
+      - member: 1
+      - member: 2
+
   - name: support
     settings:
       - key: descr
@@ -41,5 +59,4 @@ opn_groups:
         value: 2000
       - key: priv
         value: page-all
-      - member: 1
-      - member: 2
+      - member: 3
