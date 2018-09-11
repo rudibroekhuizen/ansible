@@ -12,7 +12,7 @@ opn_singles:
         value: naturalis.nl
 
 opn_interfaces:
-  - if: em1_vlan114
+  - if: opt1
     settings:
       - key: if
         value: em1_vlan114
