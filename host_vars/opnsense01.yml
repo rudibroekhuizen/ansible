@@ -151,7 +151,7 @@ opn_virtualip:
       - key: mode
         value: carp
       - key: interface
-        value: opt1
+        value: opt2
       - key: subnet
         value: 10.115.0.1
       - key: advskew
@@ -169,7 +169,7 @@ opn_virtualip:
       - key: mode
         value: carp
       - key: interface
-        value: opt1
+        value: opt3
       - key: subnet
         value: 10.116.0.1
       - key: advskew
@@ -187,7 +187,7 @@ opn_virtualip:
       - key: mode
         value: carp
       - key: interface
-        value: opt1
+        value: opt4
       - key: subnet
         value: 10.117.0.1
       - key: advskew
@@ -205,7 +205,7 @@ opn_virtualip:
       - key: mode
         value: carp
       - key: interface
-        value: opt1
+        value: opt5
       - key: subnet
         value: 10.118.0.1
       - key: advskew
@@ -223,7 +223,7 @@ opn_virtualip:
       - key: mode
         value: carp
       - key: interface
-        value: opt1
+        value: opt6
       - key: subnet
         value: 10.119.0.1
       - key: advskew
