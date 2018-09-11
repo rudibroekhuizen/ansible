@@ -1,0 +1,50 @@
+---
+opn_vlans:
+  - tag: 114
+    settings:
+      - key: if
+        value: em1
+      - key: descr
+        value: "dw2-mgm-114"
+      - key: vlanif
+        value: em1_vlan114
+  - tag: 115
+    settings:
+      - key: if
+        value: em1
+      - key: descr
+        value: "dw2-srv-115"
+      - key: vlanif
+        value: em1_vlan115
+  - tag: 116
+    settings:
+      - key: if
+        value: em1
+      - key: descr
+        value: "dw2-sec-116"
+      - key: vlanif
+        value: em1_vlan116
+  - tag: 117
+    settings:
+      - key: if
+        value: em1
+      - key: descr
+        value: "dw2-fac-117"
+      - key: vlanif
+        value: em1_vlan117
+  - tag: 118
+    settings:
+      - key: if
+        value: em1
+      - key: descr
+        value: "dw2-srv-118"
+      - key: vlanif
+        value: em1_vlan118
+  - tag: 119
+    settings:
+      - key: if
+        value: em1
+      - key: descr
+        value: "dw2-off-119"
+      - key: vlanif
+        value: em1_vlan119
