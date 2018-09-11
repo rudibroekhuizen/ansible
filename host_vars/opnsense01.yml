@@ -160,3 +160,75 @@ opn_virtualip:
         value: 1
       - key: password
         value: opnsense
+  - vhid: 116
+    settings:
+      - key: type
+        value: single
+      - key: subnet_bits
+        value: 16
+      - key: mode
+        value: carp
+      - key: interface
+        value: opt1
+      - key: subnet
+        value: 10.116.0.1
+      - key: advskew
+        value: 0
+      - key: advbase
+        value: 1
+      - key: password
+        value: opnsense
+  - vhid: 117
+    settings:
+      - key: type
+        value: single
+      - key: subnet_bits
+        value: 16
+      - key: mode
+        value: carp
+      - key: interface
+        value: opt1
+      - key: subnet
+        value: 10.117.0.1
+      - key: advskew
+        value: 0
+      - key: advbase
+        value: 1
+      - key: password
+        value: opnsense
+  - vhid: 118
+    settings:
+      - key: type
+        value: single
+      - key: subnet_bits
+        value: 16
+      - key: mode
+        value: carp
+      - key: interface
+        value: opt1
+      - key: subnet
+        value: 10.118.0.1
+      - key: advskew
+        value: 0
+      - key: advbase
+        value: 1
+      - key: password
+        value: opnsense
+  - vhid: 119
+    settings:
+      - key: type
+        value: single
+      - key: subnet_bits
+        value: 16
+      - key: mode
+        value: carp
+      - key: interface
+        value: opt1
+      - key: subnet
+        value: 10.119.0.1
+      - key: advskew
+        value: 0
+      - key: advbase
+        value: 1
+      - key: password
+        value: opnsense        
