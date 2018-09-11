@@ -59,7 +59,7 @@ opn_vlans:
       - key: if
         value: em1
       - key: descr
-        value: "dw2-srv-118
+        value: "dw2-srv-118"
       - key: vlanif
         value: em1_vlan118
   - tag: 119
