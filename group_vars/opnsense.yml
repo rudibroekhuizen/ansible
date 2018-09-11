@@ -9,7 +9,8 @@ dnsservers:
 opn_users:
   - name: rudi.broekhuizen
     settings:
-      - { key: descr, value: "Rudi Broekhuizen" }
+      - key: descr
+        value: "Rudi Broekhuizen"
       - key: scope
         value: user
       - key: groupname
