@@ -1,5 +1,5 @@
 ---
-- hosts: opnsense
+- hosts: opnsense-all
   become: yes
   roles:
     - ansible-role-opnsense
