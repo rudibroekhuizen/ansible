@@ -195,9 +195,9 @@ opn_hasync:
       - key: password
         value: opnsense
       - key: pfsyncinterface
-        value: lan
+        value: pfsync
       - key: synchronizetoip
-        value: 192.168.50.2
+        value: 192.168.254.2
       - key: synchronizeusers
         value: "on"
       - key: synchronizevirtualip
