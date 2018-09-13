@@ -12,22 +12,6 @@ opn_singles:
         value: opnsense01
       - key: domain
         value: naturalis.nl
-  - xpath: /opnsense/hasync
-    settings:
-      - key: pfsyncenabled
-        value: "on"
-      - key: username
-        value: root
-      - key: password
-        value: opnsense
-      - key: pfsyncinterface
-        value: lan
-      - key: synchronizetoip
-        value: 192.168.50.2
-      - key: synchronizeusers
-        value: "on"
-      - key: synchronizevirtualip
-        value: "on"
 
 opn_interfaces:
   - if: opt1
@@ -200,3 +184,21 @@ opn_virtualip:
         value: 1
       - key: password
         value: opnsense        
+
+opn_hasync:
+  - xpath: /opnsense/hasync
+    settings:
+      - key: pfsyncenabled
+        value: "on"
+      - key: username
+        value: root
+      - key: password
+        value: opnsense
+      - key: pfsyncinterface
+        value: lan
+      - key: synchronizetoip
+        value: 192.168.50.2
+      - key: synchronizeusers
+        value: "on"
+      - key: synchronizevirtualip
+        value: "on"
