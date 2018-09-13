@@ -22,6 +22,8 @@ opn_interfaces:
         value: 192.168.254.2
       - key: subnet
         value: 29
+      - key: descr
+        value: pfsync
   - if: opt1
     settings:
       - key: if
@@ -33,7 +35,7 @@ opn_interfaces:
       - key: subnet
         value: 16
       - key: descr
-        value: vlan__114
+        value: vlan114
   - if: opt2
     settings:
       - key: if
@@ -45,7 +47,7 @@ opn_interfaces:
       - key: subnet
         value: 16
       - key: descr
-        value: vlan__115
+        value: vlan115
   - if: opt3
     settings:
       - key: if
@@ -57,7 +59,7 @@ opn_interfaces:
       - key: subnet
         value: 16
       - key: descr
-        value: vlan__116
+        value: vlan116
   - if: opt4
     settings:
       - key: if
@@ -69,7 +71,7 @@ opn_interfaces:
       - key: subnet
         value: 16
       - key: descr
-        value: vlan__117
+        value: vlan117
   - if: opt5
     settings:
       - key: if
@@ -81,7 +83,7 @@ opn_interfaces:
       - key: subnet
         value: 16
       - key: descr
-        value: vlan__118
+        value: vlan118
   - if: opt6
     settings:
       - key: if
@@ -93,4 +95,4 @@ opn_interfaces:
       - key: subnet
         value: 16
       - key: descr
-        value: vlan__119
+        value: vlan119
