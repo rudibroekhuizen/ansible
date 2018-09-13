@@ -14,6 +14,16 @@ opn_singles:
         value: naturalis.nl
 
 opn_interfaces:
+  - if: pfsync
+    settings:
+      - key: if
+        value: em2
+      - key: enable
+        value: 1
+      - key: ipaddr
+        value: 192.168.254.1
+      - key: subnet
+        value: 29
   - if: opt1
     settings:
       - key: if
