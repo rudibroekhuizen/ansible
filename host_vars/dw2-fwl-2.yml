@@ -22,8 +22,6 @@ opn_interfaces:
         value: 192.168.254.2
       - key: subnet
         value: 29
-      - key: descr
-        value: pfsync
   - if: opt1
     settings:
       - key: if
