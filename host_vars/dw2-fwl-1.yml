@@ -14,18 +14,18 @@ opn_singles:
         value: naturalis.nl
 
 opn_interfaces:
-  - if: lan
-    settings:
-      - key: if
-        value: em1
-      - key: descr
-        value: lan
   - if: wan
     settings:
       - key: if
         value: em0
       - key: descr
         value: wan
+  - if: lan
+    settings:
+      - key: if
+        value: em1
+      - key: descr
+        value: lan
   - if: pfsync
     settings:
       - key: if
