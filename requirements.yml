@@ -5,6 +5,9 @@
 - name: cumuluslinux
   src: https://github.com/maxlareo/ansible-cumuluslinux
 
+- name: ansible-cumulus-metrics
+  src: https://github.com/naturalis/ansible-cumulus-metrics
+
 - name: postgresql
   src: ANXS.postgresql
 
