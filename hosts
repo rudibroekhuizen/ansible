@@ -32,6 +32,6 @@ leaf02
 spine01
 spine02
 
-[cumulus-all:children]
+[cumulus-network:children]
 cumulus-leafs
 cumulus-spines
