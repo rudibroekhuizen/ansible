@@ -1,8 +1,4 @@
 ---
-ansible_host: 192.168.0.11
-ansible_user: cumulus
-ansible_ssh_pass: CumulusLinux!
-
 cl_hostname: leaf01
 
 cl_license: user@company.com|thequickbrownfoxjumpsoverthelazydog312
