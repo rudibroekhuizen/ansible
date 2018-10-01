@@ -14,108 +14,42 @@ opn_singles:
         value: naturalis.nl
 
 opn_interfaces_specific:
-  - if: opt1
-    settings:
-      - key: ipaddr
-        value: 10.114.0.2
-
-opn_interfaces:
-  - if: wan
-    settings:
-      - key: if
-        value: em0
-      - key: descr
-        value: wan
-  - if: lan
-    settings:
-      - key: if
-        value: em1
-      - key: descr
-        value: lan
+#  - if: wan
+#    settings:
+#      - key: ipaddr
+#        value: x.x.x.x
+#  - if: lan
+#    settings:
+#      - key: ipaddr
+#        value: x.x.x.x
   - if: pfsync
     settings:
-      - key: if
-        value: em2
-      - key: enable
-        value: 1
       - key: ipaddr
         value: 192.168.254.1
-      - key: subnet
-        value: 29
-      - key: descr
-        value: pfsync
   - if: opt1
     settings:
-      - key: if
-        value: em1_vlan114
-      - key: enable
-        value: 1
       - key: ipaddr
         value: 10.114.0.2
-      - key: subnet
-        value: 16
-      - key: descr
-        value: dw2-mgm-114
   - if: opt2
     settings:
-      - key: if
-        value: em1_vlan115
-      - key: enable
-        value: 1
       - key: ipaddr
         value: 10.115.0.2
-      - key: subnet
-        value: 16
-      - key: descr
-        value: dw2-srv-115
   - if: opt3
     settings:
-      - key: if
-        value: em1_vlan116
-      - key: enable
-        value: 1
       - key: ipaddr
         value: 10.116.0.2
-      - key: subnet
-        value: 16
-      - key: descr
-        value: dw2-sec-116
   - if: opt4
     settings:
-      - key: if
-        value: em1_vlan117
-      - key: enable
-        value: 1
       - key: ipaddr
         value: 10.117.0.2
-      - key: subnet
-        value: 16
-      - key: descr
-        value: dw2-fac-117
   - if: opt5
     settings:
-      - key: if
-        value: em1_vlan118
-      - key: enable
-        value: 1
       - key: ipaddr
         value: 10.118.0.2
-      - key: subnet
-        value: 16
-      - key: descr
-        value: dw2-srv-118
   - if: opt6
     settings:
-      - key: if
-        value: em1_vlan119
-      - key: enable
-        value: 1
       - key: ipaddr
         value: 10.119.0.2
-      - key: subnet
-        value: 16
-      - key: descr
-        value: dw2-off-119
 
 opn_virtualip:
   - vhid: 114
