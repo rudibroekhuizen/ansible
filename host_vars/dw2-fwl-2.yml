@@ -11,6 +11,12 @@ opn_singles:
       - key: domain
         value: naturalis.nl
 
+opn_interfaces_specific:
+  - if: opt1
+    settings:
+      - key: ipaddr
+        value: 10.114.0.3
+
 opn_interfaces:
   - if: wan
     settings:
