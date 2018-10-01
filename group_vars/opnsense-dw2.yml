@@ -1,4 +1,16 @@
 ---
+opn_interfaces_common:
+  - if: opt1
+    settings:
+      - key: if
+        value: em1_vlan114
+      - key: enable
+        value: 1
+      - key: subnet
+        value: 16
+      - key: descr
+        value: dw2-mgm-114
+
 opn_vlans:
   - tag: 114
     settings:
