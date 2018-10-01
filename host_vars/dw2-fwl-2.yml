@@ -12,14 +12,14 @@ opn_singles:
         value: naturalis.nl
 
 opn_interfaces_specific:
-#  - if: wan
-#    settings:
-#      - key: ipaddr
-#        value: x.x.x.x
+  - if: wan
+    settings:
+      - key: ipaddr
+        value: dhcp
 #  - if: lan
 #    settings:
 #      - key: ipaddr
-#        value: x.x.x.x
+#        value: dhcp
   - if: pfsync
     settings:
       - key: ipaddr
