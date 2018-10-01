@@ -47,5 +47,5 @@ opn_interfaces_specific:
   - if: opt6
     settings:
       - key: ipaddr
-        value: 10.119.0.2
+        value: 10.119.0.3
 ...
