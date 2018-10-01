@@ -2,4 +2,4 @@
 - hosts: opnsense-all
   become: yes
   roles:
-    - ansible-role-opnsense
+    - ansible-opnsense
