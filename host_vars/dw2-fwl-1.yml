@@ -9,7 +9,7 @@ opn_misc:
   - xpath: /opnsense/system
     settings:
       - key: hostname
-        value: opnsense01
+        value: dw2-fwl-1
       - key: domain
         value: naturalis.nl
   - xpath: /opnsense/hasync
