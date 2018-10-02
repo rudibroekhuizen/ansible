@@ -6,10 +6,11 @@ ansible_ssh_pass: opnsense
 opn_filters:
   - descr: unique
     settings:
-      source:
-        - network: lan
-      destination:
-        - any: 1
+      test:
+        source:
+          - network: lan
+        destination:
+          - any: 1
 
 opn_misc:
   - xpath: /opnsense/system
