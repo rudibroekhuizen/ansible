@@ -18,3 +18,6 @@
                 - name: "hadoop.tmp.dir"
                 - value: "/tmp/hadoop-tmp"
 ...
+
+
+# https://raw.githubusercontent.com/qmgeng/TestJAVA/c24d387bf45ba4de4292d63733d0906060bfc525/src/conf/core-default.xml
