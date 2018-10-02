@@ -1,0 +1,20 @@
+---
+- name: Ansible XML
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - name: XML tricks
+      xml:
+        path: /tmp/core-default.xml
+        xpath: /configuration
+        add_children: 
+          - property:
+              _:
+                - name: "fs.defaultFS"
+                - value: "hdfs://master_ipv4_addr:9000"
+          - property:
+              _:
+                - name: "hadoop.tmp.dir"
+                - value: "/tmp/hadoop-tmp"
+...
