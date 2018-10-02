@@ -8,6 +8,7 @@
       xml:
         path: /tmp/core-default.xml
         xpath: /configuration
+        pretty_print: yes
         add_children: 
           - property:
               _:
