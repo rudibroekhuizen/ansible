@@ -3,14 +3,15 @@ ansible_host: 192.168.50.2
 ansible_user: root
 ansible_ssh_pass: opnsense
 
-opn_filters:
-  - descr: unique
+opn_filter:
+  - descr: Allow pfsync
     settings:
-      test:
-        - source:
-          - network: lan
-        - destination:
-          - any: 1
+      - key: type
+        value: pass
+      - key: ipprotocol
+        value: inet
+      - key: interface
+        value: pfsync
 
 opn_misc:
   - xpath: /opnsense/system
