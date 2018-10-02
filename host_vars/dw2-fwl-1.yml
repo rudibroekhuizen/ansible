@@ -182,8 +182,6 @@ opn_virtualip:
 opn_gateways:
   - interface: wan
     settings:
-      - key: interface
-        value: wan
       - key: gateway
         value: 1.1.1.1
       - key: name
