@@ -5,6 +5,8 @@ ansible_ssh_pass: opnsense
 
 primary: true
 
+opn_filter: []
+
 opn_misc:
   - xpath: /opnsense/system
     settings:
