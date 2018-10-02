@@ -7,9 +7,9 @@ opn_filters:
   - descr: unique
     settings:
       test:
-        source:
+        - source:
           - network: lan
-        destination:
+        - destination:
           - any: 1
 
 opn_misc:
