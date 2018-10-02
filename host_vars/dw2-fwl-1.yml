@@ -175,5 +175,17 @@ opn_virtualip:
       - key: advbase
         value: 1
       - key: password
-        value: opnsense        
+        value: opnsense
+
+opn_gateways:
+  - interface: wan
+    settings:
+      - key: interface
+        value: wan
+      - key: gateway
+        value: 1.1.1.1
+      - key: name
+        value: wan_gateway
+      - key: defaultgw
+        value: 1     
 ...
