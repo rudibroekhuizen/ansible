@@ -2,11 +2,11 @@
 ansible_become_method: sudo
 ansible_python_interpreter: '/usr/bin/env python2.7'
 
-dnsservers:
+dnsserver:
   - "8.8.8.8"
   - "8.8.4.4"
 
-opn_users:
+opn_user:
   - name: rudi.broekhuizen
     settings:
       - key: descr
@@ -46,7 +46,7 @@ opn_users:
       - key: uid
         value: 3
 
-opn_groups:
+opn_group:
   - name: admins
     settings:
       - member: 1
