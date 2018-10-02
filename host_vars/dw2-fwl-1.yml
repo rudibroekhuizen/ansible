@@ -5,13 +5,29 @@ ansible_ssh_pass: opnsense
 
 primary: true
 
-opn_singles:
+opn_misc:
   - xpath: /opnsense/system
     settings:
       - key: hostname
         value: opnsense01
       - key: domain
         value: naturalis.nl
+  - xpath: /opnsense/hasync
+    settings:
+      - key: pfsyncenabled
+        value: "on"
+      - key: username
+        value: root
+      - key: password
+        value: opnsense
+      - key: pfsyncinterface
+        value: pfsync
+      - key: synchronizetoip
+        value: 192.168.254.2
+      - key: synchronizeusers
+        value: "on"
+      - key: synchronizevirtualip
+        value: "on"
 
 opn_interfaces_specific:
 #  - if: wan
@@ -160,21 +176,4 @@ opn_virtualip:
         value: 1
       - key: password
         value: opnsense        
-
-opn_hasync:
-  - xpath: /opnsense/hasync
-    settings:
-      - key: pfsyncenabled
-        value: "on"
-      - key: username
-        value: root
-      - key: password
-        value: opnsense
-      - key: pfsyncinterface
-        value: pfsync
-      - key: synchronizetoip
-        value: 192.168.254.2
-      - key: synchronizeusers
-        value: "on"
-      - key: synchronizevirtualip
-        value: "on"
+...
