@@ -3,6 +3,12 @@ ansible_host: 192.168.50.2
 ansible_user: root
 ansible_ssh_pass: opnsense
 
+opn_filters:
+  - descr: unique
+    settings:
+      - key: network
+        value: lan
+
 opn_misc:
   - xpath: /opnsense/system
     settings:
