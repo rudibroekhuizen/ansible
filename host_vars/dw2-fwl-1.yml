@@ -20,6 +20,8 @@ opn_misc:
         value: opnsense
       - key: pfsyncinterface
         value: pfsync
+      - key: pfsyncpeerip
+        value: 192.168.254.2
       - key: synchronizetoip
         value: 192.168.254.2
       - key: synchronizeusers
