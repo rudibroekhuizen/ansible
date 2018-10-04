@@ -26,6 +26,10 @@ opn_misc:
         value: "on"
       - key: synchronizevirtualip
         value: "on"
+      - key: synchronizealiases
+        value: "on"
+      - key: synchronizerules
+        value: "on"
 
 opn_interfaces_specific:
 #  - if: wan
