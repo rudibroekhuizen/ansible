@@ -182,6 +182,8 @@ opn_aliase:
         value: network
       - key: address
         value: "192.168.103.0/24 172.16.51.61/32 172.16.51.61/32"
+      - key: state
+        value: present
 
 opn_gateways:
   - interface: wan
