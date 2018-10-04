@@ -175,7 +175,7 @@ opn_virtualip:
       - key: password
         value: opnsense
 
-opn_aliase:
+opn_alias:
   - name: ictsupport
     settings:
       - key: type
