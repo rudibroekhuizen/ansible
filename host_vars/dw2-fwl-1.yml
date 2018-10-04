@@ -175,6 +175,14 @@ opn_virtualip:
       - key: password
         value: opnsense
 
+opn_aliase:
+  - name: ictsupport
+    settings:
+      - key: type
+        value: network
+      - key: address
+        value: "192.168.103.0/24 172.16.51.61/32 172.16.51.61/32"
+
 opn_gateways:
   - interface: wan
     settings:
