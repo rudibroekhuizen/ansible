@@ -6,5 +6,5 @@
   roles:
     - role: PeterMosmans.virtualbox-guest
   vars:
-    - virtualbox_version: 5.2.10
+    - virtualbox_version: 5.2.11
 ...
