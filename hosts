@@ -2,8 +2,8 @@
 localhost ansible_connection=local
 
 [opnsense-dw2]
-dw2-fwl-1
-dw2-fwl-2
+netdw2-firewall-a2a
+netdw2-firewall-a2b
 
 [opnsense-rvs]
 rvs-fwl-1
