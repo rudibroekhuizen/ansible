@@ -3,13 +3,37 @@ ansible_host: 192.168.50.1
 ansible_user: root
 ansible_ssh_pass: opnsense
 
-opn_misc:
+opn_general:
   - xpath: /opnsense/system
     settings:
       - key: hostname
-        value: dw2-fwl-1
+        value: firewall-primary
       - key: domain
         value: naturalis.nl
+  - xpath: /opnsense/nat
+    settings:
+      - key: outbound/mode
+        value: disabled
+
+opn_filter:
+  - descr: Allow pfsync
+    settings:
+      - key: interface
+        value: pfsync
+      - key: log
+        value: 1
+      - key: type
+        value: pass
+      - key: ipprotocol
+        value: inet
+      - key: statetype
+        value: keep state
+      - key: source/any
+        value: 1
+      - key: destination/any
+        value: 1
+
+opn_hasync:
   - xpath: /opnsense/hasync
     settings:
       - key: pfsyncenabled
@@ -34,14 +58,18 @@ opn_misc:
         value: "on"
 
 opn_interfaces_specific:
-#  - if: wan
-#    settings:
-#      - key: ipaddr
-#        value: x.x.x.x
-#  - if: lan
-#    settings:
-#      - key: ipaddr
-#        value: x.x.x.x
+  - if: wan
+    settings:
+      - key: ipaddr
+        value: 192.168.100.2
+      - key: subnet
+        value: 24
+      - key: gateway
+        value: wan_gateway
+    #  - if: lan
+    #settings:
+    #- key: ipaddr
+    #value: x.x.x.x
   - if: pfsync
     settings:
       - key: ipaddr
@@ -62,16 +90,26 @@ opn_interfaces_specific:
     settings:
       - key: ipaddr
         value: 10.117.0.2
-  - if: opt5
-    settings:
-      - key: ipaddr
-        value: 10.118.0.2
-  - if: opt6
-    settings:
-      - key: ipaddr
-        value: 10.119.0.2
 
 opn_virtualip:
+  - vhid: 255
+    settings:
+      - key: type
+        value: single
+      - key: subnet_bits
+        value: 24
+      - key: mode
+        value: carp
+      - key: interface
+        value: wan
+      - key: subnet
+        value: 192.168.100.1
+      - key: advskew
+        value: 0
+      - key: advbase
+        value: 1
+      - key: password
+        value: opnsense
   - vhid: 114
     settings:
       - key: type
@@ -144,42 +182,6 @@ opn_virtualip:
         value: 1
       - key: password
         value: opnsense
-  - vhid: 118
-    settings:
-      - key: type
-        value: single
-      - key: subnet_bits
-        value: 16
-      - key: mode
-        value: carp
-      - key: interface
-        value: opt5
-      - key: subnet
-        value: 10.118.0.1
-      - key: advskew
-        value: 0
-      - key: advbase
-        value: 1
-      - key: password
-        value: opnsense
-  - vhid: 119
-    settings:
-      - key: type
-        value: single
-      - key: subnet_bits
-        value: 16
-      - key: mode
-        value: carp
-      - key: interface
-        value: opt6
-      - key: subnet
-        value: 10.119.0.1
-      - key: advskew
-        value: 0
-      - key: advbase
-        value: 1
-      - key: password
-        value: opnsense
 
 opn_alias:
   - name: ictsupport
@@ -190,16 +192,6 @@ opn_alias:
         value: "192.168.103.0/24 172.16.51.61/32 172.16.51.61/32"
       - key: state
         value: present
-
-opn_gateways:
-  - interface: wan
-    settings:
-      - key: gateway
-        value: 1.1.1.1
-      - key: name
-        value: wan_gateway
-      - key: defaultgw
-        value: 1
 
 opn_dhcpd:
   - if: opt1
