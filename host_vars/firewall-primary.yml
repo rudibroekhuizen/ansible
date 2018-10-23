@@ -58,7 +58,7 @@ opn_hasync:
         value: "on"
 
 opn_interfaces_specific:
-  - if: wan
+  - interface: wan
     settings:
       - key: ipaddr
         value: 192.168.100.2
@@ -70,23 +70,23 @@ opn_interfaces_specific:
     #settings:
     #- key: ipaddr
     #value: x.x.x.x
-  - if: pfsync
+  - interface: pfsync
     settings:
       - key: ipaddr
         value: 192.168.254.1
-  - if: opt1
+  - interface: opt1
     settings:
       - key: ipaddr
         value: 10.114.0.2
-  - if: opt2
+  - interface: opt2
     settings:
       - key: ipaddr
         value: 10.115.0.2
-  - if: opt3
+  - interface: opt3
     settings:
       - key: ipaddr
         value: 10.116.0.2
-  - if: opt4
+  - interface: opt4
     settings:
       - key: ipaddr
         value: 10.117.0.2
