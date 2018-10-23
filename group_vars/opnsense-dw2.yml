@@ -79,3 +79,13 @@ opn_vlans:
     settings:
       - key: descr
         value: "dw2-fac-117"
+
+opn_gateways:
+  - interface: wan
+    settings:
+      - key: gateway
+        value: 192.168.1.1
+      - key: name
+        value: wan_gateway
+      - key: defaultgw
+        value: 1
