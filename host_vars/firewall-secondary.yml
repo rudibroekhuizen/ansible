@@ -3,6 +3,18 @@ ansible_host: 192.168.50.2
 ansible_user: root
 ansible_ssh_pass: opnsense
 
+opn_general:
+  - xpath: /opnsense/system
+    settings:
+      - key: hostname
+        value: firewall-secondary
+      - key: domain
+        value: naturalis.nl
+  - xpath: /opnsense/nat
+    settings:
+      - key: outbound/mode
+        value: disabled
+
 opn_filter:
   - descr: Allow pfsync
     settings:
@@ -19,19 +31,15 @@ opn_filter:
       - key: destination/any
         value: 1
 
-opn_misc:
-  - xpath: /opnsense/system
-    settings:
-      - key: hostname
-        value: dw2-fwl-2
-      - key: domain
-        value: naturalis.nl
-
 opn_interfaces_specific:
   - if: wan
     settings:
       - key: ipaddr
-        value: dhcp
+        value: 192.168.100.3
+      - key: subnet
+        value: 24
+      - key: gateway
+        value: wan_gateway
 #  - if: lan
 #    settings:
 #      - key: ipaddr
@@ -56,12 +64,4 @@ opn_interfaces_specific:
     settings:
       - key: ipaddr
         value: 10.117.0.3
-  - if: opt5
-    settings:
-      - key: ipaddr
-        value: 10.118.0.3
-  - if: opt6
-    settings:
-      - key: ipaddr
-        value: 10.119.0.3
 ...
