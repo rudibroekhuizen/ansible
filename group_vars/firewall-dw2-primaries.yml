@@ -40,7 +40,7 @@ opn_vlan_interfaces_specific:
       - key: ipaddr
         value: 10.117.0.2
 
-opn_virtualip_b:
+opn_vlan_virtualip:
   - vhid: 114
     settings:
       - key: type
