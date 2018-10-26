@@ -1,5 +1,5 @@
 ---
-- hosts: opnsense-all
+- hosts: firewall-all
   become: yes
   roles:
     - ansible-opnsense
