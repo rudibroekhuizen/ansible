@@ -3,29 +3,22 @@ localhost ansible_connection=local
 
 
 
-[firewall-dw2-hardware]
-firewall-dw2-primary-hardware
-firewall-dw2-secondary-hardware
-
-[firewall-dw2-virtualbox]
-firewall-dw2-primary-virtualbox
-firewall-dw2-secondary-virtualbox
-
 [firewall-dw2-primaries]
 firewall-dw2-primary-hardware
 firewall-dw2-primary-virtualbox
 
 [firewall-dw2-secondaries]
-firewall-dw2-secondary-prod
+firewall-dw2-secondary-hardware
 firewall-dw2-secondary-virtualbox
 
 [firewall-dw2:children]
-firewall-dw2-hardware
-firewall-dw2-virtualbox
+firewall-dw2-primaries
+firewall-dw2-secondaries
 
 [firewall-all:children]
 firewall-dw2
 firewall-rvs
+
 
 
 [firewall-rvs]
