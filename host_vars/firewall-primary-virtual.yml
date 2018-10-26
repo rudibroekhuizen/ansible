@@ -11,6 +11,8 @@ opn_general:
       - key: domain
         value: naturalis.nl
 
+opn_vlan_parent_interface: em1
+
 opn_physical_interfaces:
   - interface: wan
     settings:
