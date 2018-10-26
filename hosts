@@ -2,23 +2,24 @@
 localhost ansible_connection=local
 
 
-[opnsense-dw2-hardware]
-firewall-primary-hardware
-firewall-secondary-hardware
 
-[opnsense-dw2-virtualbox]
-firewall-primary-virtualbox
-firewall-secondary-virtualbox
+[firewall-dw2-hardware]
+firewall-dw2-primary-hardware
+firewall-dw2-secondary-hardware
 
-[opnsense-dw2-primaries]
-firewall-primary-hardware
-firewall-primary-virtualbox
+[firewall-dw2-virtualbox]
+firewall-dw2-primary-virtualbox
+firewall-dw2-secondary-virtualbox
 
-[opnsense-dw2-secondaries]
-firewall-secondary-prod
-firewall-secondary-virtualbox
+[firewall-dw2-primaries]
+firewall-dw2-primary-hardware
+firewall-dw2-primary-virtualbox
 
-[opnsense-dw2:children]
+[firewall-dw2-secondaries]
+firewall-dw2-secondary-prod
+firewall-dw2-secondary-virtualbox
+
+[firewall-dw2:children]
 opnsense-dw2-hardware
 opnsense-dw2-virtualbox
 
