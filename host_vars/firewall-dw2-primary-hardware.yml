@@ -17,7 +17,7 @@ opn_general:
 
 opn_vlan_parent_interface: ixl1
 
-opn_physical_interfaces:
+opn_interfaces:
   - interface: wan
     settings:
       - key: if
@@ -72,5 +72,4 @@ opn_virtualip:
         value: 1
       - key: password
         value: opnsense     
-...
 ...
