@@ -10,10 +10,6 @@ opn_general:
         value: firewall-primary-virtual
       - key: domain
         value: naturalis.nl
-  - xpath: /opnsense/nat
-    settings:
-      - key: outbound/mode
-        value: disabled
 
 opn_physical_interfaces:
   - interface: wan
