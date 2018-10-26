@@ -15,6 +15,42 @@ opn_general:
       - key: outbound/mode
         value: disabled
 
+opn_physical_interfaces:
+  - interface: wan
+    settings:
+      - key: if
+        value: em0
+      - key: ipaddr
+        value: 192.168.100.3
+      - key: subnet
+        value: 24
+      - key: gateway
+        value: wan_gateway
+      - key: descr
+        value: wan
+  - interface: lan
+    settings:
+      - key: if
+        value: em1
+      - key: ipaddr
+        value: 192.168.1.1
+      - key: subnet
+        value: 24
+      - key: descr
+        value: lan
+  - interface: pfsync
+    settings:
+      - key: if
+        value: em2
+      - key: ipaddr
+        value: 192.168.254.2
+      - key: enable
+        value: 1
+      - key: subnet
+        value: 29
+      - key: descr
+        value: pfsync
+
 opn_filter:
   - descr: Allow pfsync
     settings:
@@ -31,23 +67,7 @@ opn_filter:
       - key: destination/any
         value: 1
 
-opn_interfaces_specific:
-  - interface: wan
-    settings:
-      - key: ipaddr
-        value: 192.168.100.3
-      - key: subnet
-        value: 24
-      - key: gateway
-        value: wan_gateway
-#  - if: lan
-#    settings:
-#      - key: ipaddr
-#        value: dhcp
-  - interface: pfsync
-    settings:
-      - key: ipaddr
-        value: 192.168.254.2
+opn_vlan_interfaces_specific:
   - interface: opt1
     settings:
       - key: ipaddr
