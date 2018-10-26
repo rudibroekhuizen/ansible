@@ -1,9 +1,21 @@
 [local]
 localhost ansible_connection=local
 
-[opnsense-dw2]
-firewall-primary
-firewall-secondary
+[opnsense-dw2-prod]
+firewall-primary-physical
+firewall-secondary-physical
+
+[opnsense-dw2-test]
+firewall-primary-virtual
+firewall-secondary-virtual
+
+[opnsense-dw2-primaries:children]
+firewall-primary-physical
+firewall-primary-virtual
+
+[opnsense-dw2-secondaries:children]
+firewall-secondary-physical
+firewall-secondary-virtual
 
 [opnsense-rvs]
 rvs-fwl-1
