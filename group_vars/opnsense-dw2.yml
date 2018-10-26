@@ -1,7 +1,7 @@
 ---
 opn_vlan_parent_interface: em1
 
-opn_interfaces_common:
+opn_vlan_interfaces_common:
   - interface: opt1
     vlan: 114
     settings:
