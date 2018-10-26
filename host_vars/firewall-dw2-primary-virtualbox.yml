@@ -44,4 +44,24 @@ opn_physical_interfaces:
         value: 29
       - key: descr
         value: pfsync
+        
+opn_virtualip:
+  - vhid: 255
+    settings:
+      - key: type
+        value: single
+      - key: subnet_bits
+        value: 24
+      - key: mode
+        value: carp
+      - key: interface
+        value: wan
+      - key: subnet
+        value: 192.168.100.1
+      - key: advskew
+        value: 0
+      - key: advbase
+        value: 1
+      - key: password
+        value: opnsense     
 ...
