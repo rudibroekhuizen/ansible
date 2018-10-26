@@ -15,11 +15,13 @@ opn_general:
       - key: outbound/mode
         value: disabled
 
+opn_vlan_parent_interface: ixl1
+
 opn_physical_interfaces:
   - interface: wan
     settings:
       - key: if
-        value: em0
+        value: ixl0
       - key: ipaddr
         value: 145.136.246.220
       - key: subnet
@@ -31,7 +33,7 @@ opn_physical_interfaces:
   - interface: lan
     settings:
       - key: if
-        value: em1
+        value: ixl1
       - key: ipaddr
         value: 192.168.1.1
       - key: subnet
@@ -41,7 +43,7 @@ opn_physical_interfaces:
   - interface: pfsync
     settings:
       - key: if
-        value: em2
+        value: igb2
       - key: ipaddr
         value: 192.168.254.1
       - key: enable
