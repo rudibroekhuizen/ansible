@@ -9,11 +9,11 @@ firewall-secondary-prod
 firewall-primary-test
 firewall-secondary-test
 
-[opnsense-dw2-primaries:children]
+[opnsense-dw2-primaries]
 firewall-primary-prod
 firewall-primary-test
 
-[opnsense-dw2-secondaries:children]
+[opnsense-dw2-secondaries]
 firewall-secondary-prod
 firewall-secondary-test
 
