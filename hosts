@@ -20,8 +20,11 @@ firewall-dw2-secondary-prod
 firewall-dw2-secondary-virtualbox
 
 [firewall-dw2:children]
-opnsense-dw2-hardware
-opnsense-dw2-virtualbox
+firewall-dw2-hardware
+firewall-dw2-virtualbox
+
+[firewall-all:children]
+firewall-dw2
 
 
 
