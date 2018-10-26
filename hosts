@@ -25,16 +25,12 @@ firewall-dw2-virtualbox
 
 [firewall-all:children]
 firewall-dw2
+firewall-rvs
 
 
-
-[opnsense-rvs]
+[firewall-rvs]
 rvs-fwl-1
 rvs-fwl-2
-
-[opnsense-all:children]
-opnsense-dw2
-opnsense-rvs
 
 [postgresql]
 psql-master
