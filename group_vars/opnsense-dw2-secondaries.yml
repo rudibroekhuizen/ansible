@@ -1,19 +1,4 @@
-opn_filter:
-  - descr: Allow pfsync
-    settings:
-      - key: interface
-        value: pfsync
-      - key: log
-        value: 1
-      - key: type
-        value: pass
-      - key: ipprotocol
-        value: inet
-      - key: source/any
-        value: 1
-      - key: destination/any
-        value: 1
-
+---
 opn_vlan_interfaces_specific:
   - interface: opt1
     settings:
