@@ -17,6 +17,10 @@ firewall-primary-virtual
 firewall-secondary-physical
 firewall-secondary-virtual
 
+[opnsense-dw2:children]
+opnsense-dw2-prod
+opnsense-dw2-test
+
 [opnsense-rvs]
 rvs-fwl-1
 rvs-fwl-2
