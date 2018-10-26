@@ -1,5 +1,5 @@
 ---
-opn_vlan_parent_interface: em1
+# Settings that apply to all dw2 firewalls, production and test
 
 opn_vlan_interfaces_common:
   - interface: opt1
