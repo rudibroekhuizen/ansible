@@ -13,7 +13,7 @@ opn_general:
 
 opn_vlan_parent_interface: em1
 
-opn_physical_interfaces:
+opn_interfaces:
   - interface: wan
     settings:
       - key: if
