@@ -15,6 +15,30 @@ opn_general:
       - key: outbound/mode
         value: disabled
 
+opn_physical_interface:
+  - interface: wan
+    settings:
+      - key: if
+        value: em0
+      - key: descr
+        value: wan
+  - interface: lan
+    settings:
+      - key: if
+        value: em1
+      - key: descr
+        value: lan
+  - interface: pfsync
+    settings:
+      - key: if
+        value: em2
+      - key: enable
+        value: 1
+      - key: subnet
+        value: 29
+      - key: descr
+        value: pfsync
+
 opn_filter:
   - descr: Allow pfsync
     settings:
