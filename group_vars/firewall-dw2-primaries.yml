@@ -130,9 +130,9 @@ opn_dhcpd:
       - key: enable
         value: 1
       - key: range/from
-        value: 10.114.1.0/16
+        value: 10.114.1.0
       - key: range/to
-        value: 10.114.1.254/16
+        value: 10.114.1.254
       - key: gateway
         value: 10.114.0.1
       - key: failover_peerip
