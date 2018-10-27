@@ -23,7 +23,7 @@ opn_interfaces:
       - key: if
         value: em0
       - key: ipaddr
-        value: 192.168.100.3
+        value: 192.168.50.13
       - key: subnet
         value: 24
       - key: gateway
