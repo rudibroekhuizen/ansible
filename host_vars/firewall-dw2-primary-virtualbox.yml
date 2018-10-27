@@ -19,7 +19,9 @@ opn_interfaces:
       - key: if
         value: em0
       - key: ipaddr
-        value: dhcp
+        value: 192.168.50.12
+      - key: subnet
+        value: 24
       - key: descr
         value: wan
   - interface: lan
@@ -57,7 +59,7 @@ opn_virtualip:
       - key: interface
         value: wan
       - key: subnet
-        value: 192.168.100.1
+        value: 192.168.50.11
       - key: advskew
         value: 0
       - key: advbase
