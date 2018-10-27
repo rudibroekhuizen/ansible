@@ -21,6 +21,34 @@ opn_hasync:
         value: "on"
       - key: synchronizerules
         value: "on"
+      - key: synchronizedhcpd
+        value: "on"
+      - key: synchronizeauthservers
+        value: "on"
+      - key: synchronizecerts
+        value: "on"
+      - key: synchronizenat
+        value: "on"
+      - key: synchronizeschedules
+        value: "on"
+      - key: synchronizestaticroutes
+        value: "on"
+      - key: synchronizednsforwarder
+        value: "on"
+      - key: synchronizeshaper
+        value: "on"
+      - key: synchronizecaptiveportal
+        value: "on"
+      - key: synchronizeipsec
+        value: "on"
+      - key: synchronizemonit
+        value: "on"
+      - key: synchronizeopenvpn
+        value: "on"
+      - key: synchronizesuricata
+        value: "on"
+      - key: synchronizednsresolver
+        value: "on" 
 
 opn_vlan_interfaces_specific:
   - interface: opt1
