@@ -152,6 +152,144 @@ opn_alias:
       - key: state
         value: present
 
+opn_vlan_filter:
+  - descr: Allow access to gateway vlan 114
+    settings:
+      - key: type
+        value: pass
+      - key: interface
+        value: opt1
+      - key: ipprotocol
+        value: inet
+      - key: statetype
+        value: keep state
+      - key: source/network
+        value: opt1
+      - key: destination/address
+        value: gateway_114
+      - key: log
+        value: 1
+  - descr: Allow access to public networks from vlan 114
+    settings:
+      - key: type
+        value: pass
+      - key: interface
+        value: opt1
+      - key: ipprotocol
+        value: inet
+      - key: statetype
+        value: keep state
+      - key: source/network
+        value: opt1
+      - key: destination/address
+        value: private
+      - key: destination/not
+        value: 1
+      - key: log
+        value: 1
+  - descr: Allow access to gateway vlan 115
+    settings:
+      - key: type
+        value: pass
+      - key: interface
+        value: opt2
+      - key: ipprotocol
+        value: inet
+      - key: statetype
+        value: keep state
+      - key: source/network
+        value: opt2
+      - key: destination/address
+        value: gateway_115
+      - key: log
+        value: 1
+  - descr: Allow access to public networks from vlan 115
+    settings:
+      - key: type
+        value: pass
+      - key: interface
+        value: opt2
+      - key: ipprotocol
+        value: inet
+      - key: statetype
+        value: keep state
+      - key: source/network
+        value: opt2
+      - key: destination/address
+        value: private
+      - key: destination/not
+        value: 1
+      - key: log
+        value: 1
+  - descr: Allow access to gateway vlan 116
+    settings:
+      - key: type
+        value: pass
+      - key: interface
+        value: opt3
+      - key: ipprotocol
+        value: inet
+      - key: statetype
+        value: keep state
+      - key: source/network
+        value: opt3
+      - key: destination/address
+        value: gateway_116
+      - key: log
+        value: 1
+  - descr: Allow access to public networks from vlan 116
+    settings:
+      - key: type
+        value: pass
+      - key: interface
+        value: opt3
+      - key: ipprotocol
+        value: inet
+      - key: statetype
+        value: keep state
+      - key: source/network
+        value: opt3
+      - key: destination/address
+        value: private
+      - key: destination/not
+        value: 1
+      - key: log
+        value: 1
+  - descr: Allow access to gateway vlan 117
+    settings:
+      - key: type
+        value: pass
+      - key: interface
+        value: opt4
+      - key: ipprotocol
+        value: inet
+      - key: statetype
+        value: keep state
+      - key: source/network
+        value: opt4
+      - key: destination/address
+        value: gateway_117
+      - key: log
+        value: 1
+  - descr: Allow access to public networks from vlan 117
+    settings:
+      - key: type
+        value: pass
+      - key: interface
+        value: opt4
+      - key: ipprotocol
+        value: inet
+      - key: statetype
+        value: keep state
+      - key: source/network
+        value: opt4
+      - key: destination/address
+        value: private
+      - key: destination/not
+        value: 1
+      - key: log
+        value: 1
+
 opn_dhcpd:
   - if: opt1
     settings:
