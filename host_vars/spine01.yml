@@ -1,0 +1,30 @@
+---
+#cl_hostname: spine01
+
+#cl_license: user@company.com|thequickbrownfoxjumpsoverthelazydog312
+
+cl_interface:
+  swp1:
+    ip:
+      address: 192.168.1.1/24
+    link:
+      speed: 100
+  swp48:
+    bridge:
+      trunk:
+        vlans:
+          - 114-117
+
+cl_bond:
+  uplink:
+    bond:
+      slaves:
+        - swp1
+        - swp2
+
+cl_vlan:
+  100:
+    ip:
+      adress:
+        - 10.10.10.0/24
+...
