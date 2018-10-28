@@ -15,7 +15,7 @@ opn_general:
       - key: outbound/mode
         value: disabled
 
-opn_vlan_parent_interface: em1
+#opn_vlan_parent_interface: em1
 
 opn_interfaces:
   - interface: wan
