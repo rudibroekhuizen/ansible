@@ -1,5 +1,3 @@
-cl_time_zone: Europe/Amsterdam
-
 cl_time_ntp_servers:
   - 0.cumulusnetworks.pool.ntp.org iburst
   - 1.cumulusnetworks.pool.ntp.org 
