@@ -67,6 +67,24 @@ opn_virtualip:
       - key: password
         value: opnsense     
 
+opn_filter:
+  - descr: Allow pfsync
+    settings:
+      - key: interface
+        value: pfsync
+      - key: log
+        value: 1
+      - key: type
+        value: pass
+      - key: ipprotocol
+        value: inet
+      - key: statetype
+        value: keep state
+      - key: source/any
+        value: 1
+      - key: destination/any
+        value: 1
+
 opn_syslog:
   - xpath: /opnsense/syslog
     settings:
