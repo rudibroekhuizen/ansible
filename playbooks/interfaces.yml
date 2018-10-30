@@ -1,0 +1,28 @@
+---
+- hosts: localhost
+  gather_facts: no
+  vars:
+    interface_global:
+      - xpath_base: "/opnsense/interfaces"
+        xpath_element: "subnet"
+        value: "32"
+        interfaces:
+          - wan
+          - lan
+
+  tasks:
+  - name: Download OPNsense XML sample config
+    get_url:
+      url: https://raw.githubusercontent.com/opnsense/core/master/src/etc/config.xml.sample
+      dest: /tmp/config.xml
+
+  - name: singles
+    xml:
+      path: /tmp/config.xml
+      xpath: "{{ item.0.xpath_base }}/{{ item.1 }}/{{ item.0.xpath_element }}"
+      value: "{{ item.0.value }}"
+      pretty_print: yes
+    with_subelements:
+      - "{{ interface_global }}"
+      - interfaces
+...
