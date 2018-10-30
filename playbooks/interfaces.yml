@@ -16,7 +16,7 @@
       url: https://raw.githubusercontent.com/opnsense/core/master/src/etc/config.xml.sample
       dest: /tmp/config.xml
 
-  - name: singles
+  - name: settings that apply to all interfaces
     xml:
       path: /tmp/config.xml
       xpath: "{{ item.0.xpath_base }}/{{ item.1 }}/{{ item.0.xpath_element }}"
