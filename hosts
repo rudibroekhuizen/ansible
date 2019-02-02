@@ -25,9 +25,11 @@ rvs-fwl-2
 
 
 
-[postgresql]
-psql-master
-psql-slave
+[postgres-master]
+host-01
+
+[postgres-slave]
+host-02
 
 
 
