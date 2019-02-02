@@ -10,7 +10,7 @@
   src: https://github.com/naturalis/ansible-cumulus-metrics
 
 - name: postgresql
-  https://github.com/galaxyproject/ansible-postgresql
+  src: https://github.com/galaxyproject/ansible-postgresql
   #src: galaxyproject.postgresql
 
 - name: mysql
