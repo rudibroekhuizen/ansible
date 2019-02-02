@@ -31,4 +31,4 @@ sed -i 's/#host_key_checking/host_key_checking/g' /etc/ansible/ansible.cfg
 su $ANSIBLE_USER -c "git clone https://github.com/rudibroekhuizen/ansible ~/ansible"
 
 # Download Ansible roles
-su $ANSIBLE_USER -c "ansible-galaxy install -r ~/requirements.yml -p ~/roles"
+su $ANSIBLE_USER -c "ansible-galaxy install -r ~/ansible/requirements.yml -p ~/ansible/roles"
