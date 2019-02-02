@@ -2,7 +2,7 @@
 - name: Install PostgreSQL
   hosts: postgresql
   become: yes
-  gather_facts: false
+  gather_facts: true
   roles:
     - postgresql
 ...
