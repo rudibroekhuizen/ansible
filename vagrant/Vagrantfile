@@ -1,5 +1,4 @@
-#16.04
-box = "bento/ubuntu-16.04"
+box = "ubuntu/trusty64"
 
 # Settings for all boxes:
 Vagrant.configure("2") do |config|
