@@ -17,7 +17,7 @@ echo "$ANSIBLE_USER ALL=NOPASSWD:ALL" > /etc/sudoers.d/$ANSIBLE_USER
 # Set up keys
 yes | ssh-keygen -t rsa -f /tmp/id_rsa -N ''
 mv /tmp/id_rsa /home/$ANSIBLE_USER/.ssh
-cp /tmp/ida_rsa.pub /vagrant
+cp /tmp/id_rsa.pub /vagrant
 
 chown -R $ANSIBLE_USER:$ANSIBLE_USER /home/$ANSIBLE_USER/.ssh
 
@@ -31,4 +31,4 @@ sed -i 's/#host_key_checking/host_key_checking/g' /etc/ansible/ansible.cfg
 su $ANSIBLE_USER -c "git clone https://github.com/rudibroekhuizen/ansible ~/ansible"
 
 # Download Ansible roles
-su $ANSIBLE_USER -c "ansible-galaxy install -r ~/ansible/requirements.yml -p ~/ansible/roles"
+#su $ANSIBLE_USER -c "ansible-galaxy install -r ~/ansible/requirements.yml -p ~/ansible/roles"
