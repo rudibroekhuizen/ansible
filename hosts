@@ -19,15 +19,17 @@ firewall-dw2-secondaries
 firewall-dw2
 firewall-rvs
 
-
-
 [firewall-rvs]
 rvs-fwl-1
 rvs-fwl-2
 
+
+
 [postgresql]
 psql-master
 psql-slave
+
+
 
 [rsyslog-servers]
 rsyslog-server
@@ -35,6 +37,8 @@ rsyslog-server
 [rsyslog-clients:children]
 cumulus-leafs
 cumulus-spines
+
+
 
 [cumulus-leafs]
 leaf01
