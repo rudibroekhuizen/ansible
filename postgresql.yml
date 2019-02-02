@@ -1,4 +1,3 @@
-# playbook postgresql
 ---
 - name: Install PostgreSQL
   hosts: postgresql
@@ -6,12 +5,4 @@
   gather_facts: false
   roles:
     - postgresql
-
-  tasks:
-    - name: Create slave
-      ios_ping:
-        dest: '{{ item }}'
-        state: 'present'
-      when: "'slave' in inventory_hostname"
-      with_items:
-        - '10.0.255.1'
+...
