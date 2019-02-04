@@ -1,0 +1,57 @@
+---
+- hosts:
+  - postgresql-slave
+  gather_facts: false
+  become: true
+  vars:
+    postgresql_data_directory: /var/lib/postgresql/11/main
+  tasks:
+    - name: setup replication | check if replication has been started
+      stat:
+        path: /etc/postgresql/.replica_started
+      register: "replica_started"
+      tags:
+      - replica
+    - name: setup replication | stop postgresql service
+      systemd:
+        name: postgresql
+        state: stopped
+      when: not replica_started.stat.exists
+      tags:
+      - replica
+    - name: setup replication | cleanup postgresql dir
+      file:
+        path: "{{ postgresql_data_directory }}"
+        state: absent
+      when: not replica_started.stat.exists
+      tags:
+      - replica
+    - name: setup replication | start replica
+      command: >
+        pg_basebackup
+          --host=192.168.56.6
+          --username=replicator
+          --write-recovery-conf
+          --pgdata={{ postgresql_data_directory }}
+          --progress
+      become_user: postgres
+      when: not replica_started.stat.exists
+      tags:
+      - replica
+    - name: setup replication | start postgresql service
+      systemd:
+        name: postgresql
+        state: started
+      when: not replica_started.stat.exists
+      tags:
+      - replica
+    - name: setup replication | set replication started file
+      copy:
+        dest: "/etc/postgresql/.replica_started"
+        content: "if you remove this file, ansible will recreate replication"
+        owner: postgres
+        group: postgres
+        mode: 0400
+      tags:
+      - replica
+...
