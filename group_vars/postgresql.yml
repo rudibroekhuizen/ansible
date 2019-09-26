@@ -4,4 +4,9 @@ postgresql_version: 11
 postgresql_admin_user: "postgres"
 postgresql_cluster_name: "main"
 postgresql_cluster_reset: false
+postgresql_global_config_options:
+  - option: log_destination
+    value: 'csvlog'
+  - option: log_filename
+    value: 'pglog'
 ...
