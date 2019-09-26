@@ -1,5 +1,1 @@
 ansible_host: 192.168.56.6
-postgresql_conf:
-  - max_connections: 250
-  - archive_mode: "off"
-  - work_mem: "'8MB'"
