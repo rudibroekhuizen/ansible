@@ -31,8 +31,8 @@ postgresql_user_privileges:
 
 postgresql_conf:
   - max_connections: 250
-  - archive_mode: "off"
-  - work_mem: "'8MB'"
+  - archive_mode: off
+  - work_mem: 8MB
   - wal_level: replica
   - max_wal_senders: 10
   - wal_sender_delay: 1s
