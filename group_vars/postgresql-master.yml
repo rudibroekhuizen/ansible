@@ -3,17 +3,8 @@ postgresql_listen_addresses:
   - "localhost"
   - "192.168.56.6"
 
-postgresql_pg_hba_custom:
-  - type: host
-    database: replication
-    user: replicator
-    address: 192.168.56.0/24
-    method: trust
-  - type: host
-    database: all
-    user: postgres
-    address: 192.168.56.0/24
-    method: trust
+postgresql_pg_hba_conf:
+  - host replication replicator 192.168.56.0/24 trust
 
 postgresql_users:
   - name: postgres
