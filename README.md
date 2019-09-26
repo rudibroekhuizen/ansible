@@ -20,14 +20,8 @@ vagrant ssh vb-01
 su ansible
 ```
 
-#### Install required roles:
-```bash
-ansible-galaxy install -r requirements.yml
-```
-Roles managed by requirements.yml, find them in the .ansible folder.
 
-
-
+#### Run playbook
 ```bash
 ansible-playbook base.yml
 ```
