@@ -1,29 +1,17 @@
 ---
-postgresql_listen_addresses:
-  - "localhost"
-
-# - Standby Servers -
-
-# "on" allows queries during recovery
-postgresql_hot_standby: off
-# max delay before canceling queries when reading WAL from archive
-postgresql_max_standby_archive_delay: 30s # -1 allows indefinite delay
-# max delay before canceling queries when reading streaming WAL;
-postgresql_max_standby_streaming_delay: 30s # -1 allows indefinite delay
-# send replies at least this often
-postgresql_wal_receiver_status_interval: 10s # 0 disables
-# send info from standby to prevent query conflicts
-postgresql_hot_standby_feedback: off
-#time that receiver waits for communication from master in milliseconds
-postgresql_wal_receiver_timeout: 60s
-# time to wait before retrying to retrieve WAL after a failed attempt
-postgresql_wal_retrieve_retry_interval: 5s # (>= 9.5)
-
-# - Subscribers - (>= 10) 
-
-# These settings are ignored on a publisher.
-
-postgresql_max_logical_replication_workers: 4   # (>= 10) taken from max_worker_processes
-            # (change requires restart)
-postgresql_max_sync_workers_per_subscription: 2 # (>= 10) taken from max_logical_replication_workers
+postgresql_global_config_options:
+  - option: listen_addresses
+    value: '*'
+  - option: wal_level
+    value: hot_standby
+  - option: archive_mode
+    value: on
+  - option: archive_command
+    value: 'cp -i %p /var/lib/postgresql/11/main/archive/%f'
+  - option: max_wal_senders
+    value: 3
+  - option: wal_keep_segments
+    value: 8
+  - option: hot_standby
+    value: 'on'
 ...
