@@ -17,6 +17,7 @@ vagrant ssh vb-01
 
 #### Change to user ansible
 ```bash
+sudo -s
 su ansible
 ```
 
