@@ -1,17 +1,17 @@
 ---
-postgresql_global_config_options:
-  - option: listen_addresses
-    value: '*'
-  - option: wal_level
-    value: hot_standby
-  - option: archive_mode
-    value: on
-  - option: archive_command
-    value: 'cp -i %p /var/lib/postgresql/11/main/archive/%f'
-  - option: max_wal_senders
-    value: 3
-  - option: wal_keep_segments
-    value: 8
-  - option: hot_standby
-    value: 'on'
+postgresql_listen_addresses:
+  - "localhost"
+
+postgresql_conf:
+  - max_connections: 250
+  - archive_mode: "off"
+  - hot_standby: off
+  - max_standby_archive_delay: 30s
+  - max_standby_streaming_delay: 30s
+  - wal_receiver_status_interval: 10s
+  - hot_standby_feedback: off
+  - wal_receiver_timeout: 60s
+  - wal_retrieve_retry_interval: 5s
+  - max_logical_replication_workers: 4
+  - max_sync_workers_per_subscription: 2
 ...
