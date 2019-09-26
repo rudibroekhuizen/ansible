@@ -1,6 +1,6 @@
 ---
 - name: Install PostgreSQL
-  hosts: postgresql-all
+  hosts: postgresql
   become: yes
   gather_facts: true
   roles:
