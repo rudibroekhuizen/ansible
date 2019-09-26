@@ -1,9 +1,4 @@
 ---
 postgresql_flavor: pgdg
 postgresql_version: '11'
-postgresql_global_config_options:
-  - option: log_destination
-    value: 'csvlog'
-  - option: log_filename
-    value: 'pglog'
 ...
