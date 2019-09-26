@@ -4,7 +4,7 @@ postgresql_listen_addresses:
 
 postgresql_conf:
   - max_connections: 250
-  - archive_mode: "off"
+  - archive_mode: off
   - hot_standby: off
   - max_standby_archive_delay: 30s
   - max_standby_streaming_delay: 30s
