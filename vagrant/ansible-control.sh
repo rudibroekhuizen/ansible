@@ -12,7 +12,7 @@ apt-get -y install ansible git
 # Create Ansible user
 adduser --disabled-password --gecos "" $ANSIBLE_USER
 mkdir -p /home/$ANSIBLE_USER/.ssh
-echo "$ANSIBLE_USER ALL=NOPASSWD:ALL" > /etc/sudoers.d/$ANSIBLE_USER
+echo "$ANSIBLE_USER ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/$ANSIBLE_USER
 
 # Set up keys
 yes | ssh-keygen -t rsa -f /tmp/id_rsa -N ''
