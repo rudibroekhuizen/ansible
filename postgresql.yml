@@ -22,4 +22,5 @@
         user: replicator
         password: password
         role_attr_flags: REPLICATION
+      tags: postgresql_user
 ...
