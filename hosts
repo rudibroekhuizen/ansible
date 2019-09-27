@@ -29,6 +29,7 @@ rvs-fwl-2
 
 [postgresql-master]
 psql1
+lab3
 
 [postgresql-slave]
 psql2
