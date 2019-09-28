@@ -15,7 +15,7 @@
         name: python3-psycopg2 #python-psycopg2
         update_cache: yes
         state: present
-    - name: create replication user
+    - name: Create replication user
       become_user: postgres
       postgresql_user:
         user: replicator
