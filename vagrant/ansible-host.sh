@@ -5,9 +5,7 @@ ANSIBLE_USER="ansible"
 # Create Ansible user
 adduser --disabled-password --gecos "" $ANSIBLE_USER
 mkdir -p /home/$ANSIBLE_USER/.ssh
-
 echo "$ANSIBLE_USER ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/$ANSIBLE_USER
-#sudo usermod -a -G adm $ANSIBLE_USER
 
 # Manage public key
 cat /vagrant/id_rsa.pub >> /home/$ANSIBLE_USER/.ssh/authorized_keys
