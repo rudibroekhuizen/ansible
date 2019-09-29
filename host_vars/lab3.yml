@@ -17,3 +17,9 @@ postgresql_conf:
   - max_worker_processes: 40
   - max_parallel_workers_per_gather: 20
   - max_parallel_workers: 40
+
+postgresql_users:
+  - name: ndb_readonly
+    password: password
+    db: ndb
+    priv: "CONNECT/ndb:ALL"
