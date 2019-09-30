@@ -33,7 +33,7 @@
       with_dict: "{{ postgresql_databases }}"
       tags: postgresql_databases      
 
-    - name: Set privs
+    - name: Set privileges
       become: true
       become_user: postgres
       postgresql_privs:
