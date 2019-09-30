@@ -23,3 +23,7 @@ postgresql_users:
     password: password
     db: ndb
     priv: "CONNECT/ndb:ALL"
+
+postgresql_databases:
+  ndb2:
+    owner: postgres
