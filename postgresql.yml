@@ -42,6 +42,7 @@
         privs: "{{ item.value.privs }}"
         type: "{{ item.value.type | default('table') }}"
         roles: "{{ item.value.roles }}"
+        objs: "{{ item.value.objes }}"
       with_dict: "{{ postgresql_privileges }}"
       tags: postgresql_privileges    
 
