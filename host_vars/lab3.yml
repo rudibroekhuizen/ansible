@@ -29,9 +29,9 @@ postgresql_databases:
     owner: postgres
 
 postgresql_privileges:
-  ndb2:
+  ndb:
     schema: explore
-    roles: ndb_user_test 
+    roles: ndb_readonly
     privs: SELECT
     type: table
     objs: ALL_IN_SCHEMA
