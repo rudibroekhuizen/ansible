@@ -19,7 +19,7 @@ postgresql_conf:
   - max_parallel_workers: 40
 
 postgresql_users:
-  - name: ndb_readonly
+  - user: ndb_readonly
     password: password
     db: ndb
     priv: "CONNECT/ndb:ALL"
