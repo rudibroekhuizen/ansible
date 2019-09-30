@@ -28,7 +28,7 @@ postgresql_databases:
   ndb2:
     owner: postgres
 
-postgresql_privileges
+postgresql_privileges:
   ndb2:
     schema: explore
     roles: ndb_user_test 
