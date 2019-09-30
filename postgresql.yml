@@ -7,6 +7,7 @@
     - postgresql
 
 - name: Postgres | create users
+  hosts: postgresql
   become: true
   become_user: postgres
   tasks:
