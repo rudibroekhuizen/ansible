@@ -10,15 +10,16 @@
   become: true
   become_user: postgres
   tasks:
-    postgresql_user:
-      encrypted: true
-      name: "{{ item.user }}"
-      password: "{{ item.password }}"
-      role_attr_flags: "{{ item.roles | default(omit) }}"
-      state: present
-    with_items:
-      - "{{ postgresql_users }}"
-    tags: postgresql_users
+    - name: Create users
+      postgresql_user:
+        encrypted: true
+        name: "{{ item.user }}"
+        password: "{{ item.password }}"
+        role_attr_flags: "{{ item.roles | default(omit) }}"
+        state: present
+      with_items:
+        - "{{ postgresql_users }}"
+      tags: postgresql_users
 
 - name: Add replication user to postgresql
   hosts: postgresql-master
