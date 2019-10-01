@@ -6,7 +6,17 @@
   roles:
     - postgresql
 
-- name: Postgres | ansible core 
+- name: Install packages
+  hosts: postgresql-master
+  become: true
+  tasks:
+    - name: Install packages
+      apt:
+        name: python3-psycopg2 #python-psycopg2
+        update_cache: yes
+        state: present
+
+- name: Create databases and users
   hosts: postgresql
   become: true
   become_user: postgres
@@ -20,6 +30,7 @@
         state: present
       with_items:
         - "{{ postgresql_users }}"
+      when: postgresql_users is defined
       tags: postgresql_users
 
     - name: Create databases
@@ -31,6 +42,7 @@
         encoding: "{{ item.value.encoding | default('UTF-8') }}"
         template: "{{ item.value.template | default('template0') }}"
       with_dict: "{{ postgresql_databases }}"
+      when: postgresql_databases is defined
       tags: postgresql_databases      
 
     - name: Set privileges
@@ -44,22 +56,6 @@
         roles: "{{ item.value.roles }}"
         objs: "{{ item.value.objs }}"
       with_dict: "{{ postgresql_privileges }}"
+      when: postgresql_privileges is defined
       tags: postgresql_privileges    
-
-- name: Add replication user to postgresql
-  hosts: postgresql-master
-  become: true
-  tasks:
-    - name: Install packages needed for managing Postgresql with Ansible
-      apt:
-        name: python3-psycopg2 #python-psycopg2
-        update_cache: yes
-        state: present
-    - name: Create replication user
-      become_user: postgres
-      postgresql_user:
-        user: replicator
-        password: password
-        role_attr_flags: REPLICATION
-      tags: postgresql_user
 ...
