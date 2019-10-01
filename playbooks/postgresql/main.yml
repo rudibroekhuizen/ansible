@@ -1,0 +1,5 @@
+---
+- name: Install PostgreSQL
+  include: install.yml
+  tags: install
+...
