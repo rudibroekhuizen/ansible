@@ -18,15 +18,19 @@ postgresql_conf:
   - max_parallel_workers_per_gather: 20
   - max_parallel_workers: 40
 
+postgresql_databases:
+  ndb2:
+    owner: postgres
+
 postgresql_users:
   - user: ndb_readonly
     password: password
     db: ndb
-    priv: "CONNECT/ndb:ALL"
-
-postgresql_databases:
-  ndb2:
-    owner: postgres
+    role_attr_flags: LOGIN
+  - user: replicator
+    password: password
+    db: ndb
+    role_attr_flags: REPLICATION
 
 postgresql_privileges:
   ndb:
