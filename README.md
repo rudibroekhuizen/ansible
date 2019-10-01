@@ -24,5 +24,5 @@ su ansible
 
 #### Run playbook
 ```bash
-ansible-playbook base.yml
+ansible-playbook playbooks/postgresql.yml
 ```
