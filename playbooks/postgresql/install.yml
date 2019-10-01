@@ -1,0 +1,18 @@
+---
+- name: Install PostgreSQL
+  hosts: postgresql
+  become: true
+  gather_facts: true
+  roles:
+    - postgresql
+
+- name: Install packages
+  hosts: postgresql-master
+  become: true
+  tasks:
+    - name: Install packages
+      apt:
+        name: python3-psycopg2 #python-psycopg2
+        update_cache: yes
+        state: present
+...
