@@ -1,1 +1,23 @@
 ansible_host: 192.168.56.6
+
+postgresql_databases:
+  ndb:
+    owner: postgres
+
+postgresql_users:
+  - user: ndb_readonly
+    password: password
+    db: ndb
+    role_attr_flags: LOGIN
+  - user: replicator
+    password: password
+    db: ndb
+    role_attr_flags: REPLICATION
+
+postgresql_privileges:
+  ndb:
+    schema: explore
+    roles: ndb_readonly
+    privs: SELECT
+    type: table
+    objs: ALL_IN_SCHEMA
