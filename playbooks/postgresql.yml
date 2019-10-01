@@ -33,6 +33,16 @@
       when: postgresql_users is defined
       tags: postgresql_users
 
+    - name: Create schemas
+      become: true
+      become_user: postgres
+      postgresql_schema:
+        db: "{{ item.key }}"
+        name: "{{ item.value.name }}"
+      with_dict: "{{ postgresql_schemas }}"
+      when: postgresql_schemas is defined
+      tags: postgresql_schemas
+
     - name: Create databases
       become: true
       become_user: postgres
@@ -43,7 +53,7 @@
         template: "{{ item.value.template | default('template0') }}"
       with_dict: "{{ postgresql_databases }}"
       when: postgresql_databases is defined
-      tags: postgresql_databases      
+      tags: postgresql_databases
 
     - name: Set privileges
       become: true
