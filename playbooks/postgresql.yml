@@ -7,7 +7,7 @@
     - postgresql
 
 - name: Install packages
-  hosts: postgresql-master
+  hosts: postgresql
   become: true
   tasks:
     - name: Install packages
