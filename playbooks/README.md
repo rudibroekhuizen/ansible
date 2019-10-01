@@ -1,1 +1,1 @@
-Ansible playbooks with tasks only, no roles!
+Ansible playbooks
