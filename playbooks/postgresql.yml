@@ -21,28 +21,6 @@
   become: true
   become_user: postgres
   tasks:
-    - name: Create users
-      postgresql_user:
-        encrypted: true
-        name: "{{ item.user }}"
-        password: "{{ item.password }}"
-        role_attr_flags: "{{ item.roles | default(omit) }}"
-        state: present
-      with_items:
-        - "{{ postgresql_users }}"
-      when: postgresql_users is defined
-      tags: postgresql_users
-
-    - name: Create schemas
-      become: true
-      become_user: postgres
-      postgresql_schema:
-        db: "{{ item.key }}"
-        name: "{{ item.value.name }}"
-      with_dict: "{{ postgresql_schemas }}"
-      when: postgresql_schemas is defined
-      tags: postgresql_schemas
-
     - name: Create databases
       become: true
       become_user: postgres
@@ -54,6 +32,28 @@
       with_dict: "{{ postgresql_databases }}"
       when: postgresql_databases is defined
       tags: postgresql_databases
+
+    - name: Create schemas
+      become: true
+      become_user: postgres
+      postgresql_schema:
+        db: "{{ item.key }}"
+        name: "{{ item.value.name }}"
+      with_dict: "{{ postgresql_schemas }}"
+      when: postgresql_schemas is defined
+      tags: postgresql_schemas
+
+    - name: Create users
+      postgresql_user:
+        encrypted: true
+        name: "{{ item.user }}"
+        password: "{{ item.password }}"
+        role_attr_flags: "{{ item.roles | default(omit) }}"
+        state: present
+      with_items:
+        - "{{ postgresql_users }}"
+      when: postgresql_users is defined
+      tags: postgresql_users
 
     - name: Set privileges
       become: true
