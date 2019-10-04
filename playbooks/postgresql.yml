@@ -32,8 +32,6 @@
       tags: postgresql_settings
 
     - name: Create databases
-      become: true
-      become_user: postgres
       postgresql_db:
         name: "{{ item.name }}"
         encoding: "{{ item.encoding | default('UTF-8') }}"
@@ -45,8 +43,6 @@
       tags: postgresql_databases
 
     - name: Create schemas
-      become: true
-      become_user: postgres
       postgresql_schema:
         name: "{{ item.name }}"
         db: "{{ item.db }}"
@@ -67,8 +63,6 @@
       tags: postgresql_users
 
     - name: Set privileges
-      become: true
-      become_user: postgres
       postgresql_privs:
         database: "{{ item.database }}"
         state: "{{ item.state | default('present') }}"
