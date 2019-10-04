@@ -14,11 +14,11 @@ postgresql_schemas:
     name: explore
 
 postgresql_users:
-  - user: ndb_readonly
+  - name: ndb_readonly
     password: password
     db: ndb
     role_attr_flags: LOGIN
-  - user: replicator
+  - name: replicator
     password: password
     db: ndb
     role_attr_flags: REPLICATION
