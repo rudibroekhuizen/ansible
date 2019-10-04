@@ -2,11 +2,11 @@
 ansible_host: 192.168.56.6
 
 postgresql_settings:
-   - name: work_mem
-     value: 32MB
+  - name: work_mem
+    value: 32MB
 
 postgresql_databases:
-  ndb:
+  - name: ndb
     owner: postgres
 
 postgresql_schemas:
