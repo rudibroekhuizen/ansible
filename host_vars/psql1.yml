@@ -24,10 +24,11 @@ postgresql_users:
     role_attr_flags: REPLICATION
 
 postgresql_privileges:
-  ndb:
+  - database: ndb
+    state: present
     schema: explore
-    roles: ndb_readonly
     privs: SELECT
     type: table
+    roles: ndb_readonly
     objs: ALL_IN_SCHEMA
 ...
