@@ -48,9 +48,9 @@
       become: true
       become_user: postgres
       postgresql_schema:
-        db: "{{ item.key }}"
-        name: "{{ item.value.name }}"
-      with_dict: "{{ postgresql_schemas }}"
+        name: "{{ item.name }}"
+        db: "{{ item.db }}"
+      with_items: "{{ postgresql_schemas }}"
       when: postgresql_schemas is defined
       tags: postgresql_schemas
 
