@@ -70,13 +70,14 @@
       become: true
       become_user: postgres
       postgresql_privs:
-        database: "{{ item.key }}"
-        schema: "{{ item.value.schema }}"
-        privs: "{{ item.value.privs }}"
-        type: "{{ item.value.type | default('table') }}"
-        roles: "{{ item.value.roles }}"
-        objs: "{{ item.value.objs }}"
-      with_dict: "{{ postgresql_privileges }}"
+        database: "{{ item.database }}"
+        state: "{{ item.state | default('present') }}"
+        schema: "{{ item.schema }}"
+        privs: "{{ item.privs }}"
+        type: "{{ item.type }}"
+        roles: "{{ item.roles }}"
+        objs: "{{ item.objs }}"
+      with_items: "{{ postgresql_privileges }}"
       when: postgresql_privileges is defined
       tags: postgresql_privileges
 ...
