@@ -10,8 +10,8 @@ postgresql_databases:
     owner: postgres
 
 postgresql_schemas:
-  ndb:
-    name: explore
+  - name: explore
+    db: ndb
 
 postgresql_users:
   - name: ndb_readonly
