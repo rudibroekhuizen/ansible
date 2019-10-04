@@ -16,20 +16,31 @@
         update_cache: yes
         state: present
 
-- name: Create databases and users
+- name: Configure PostgreSQL
   hosts: postgresql
   become: true
   become_user: postgres
   tasks:
+    - name: Set config settings
+      postgresql_set:
+        name: "{{ item.name }}"
+        value: "{{ item.value }}"
+        register: "{{ item.register | default(omit) }}"
+      with_items:
+        - "{{ postgresql_settings }}"
+      when: postgresql_settings is defined
+      tags: postgresql_settings
+
     - name: Create databases
       become: true
       become_user: postgres
       postgresql_db:
-        name: "{{ item.key }}"
-        owner: "{{ item.value.owner }}"
-        encoding: "{{ item.value.encoding | default('UTF-8') }}"
-        template: "{{ item.value.template | default('template0') }}"
-      with_dict: "{{ postgresql_databases }}"
+        name: "{{ item.name }}"
+        encoding: "{{ item.encoding | default('UTF-8') }}"
+        template: "{{ item.template | default('template0') }}"
+        owner: "{{ item.owner | default(postgresql_user) }}"
+        state: "{{ item.state | default('present') }}"
+      with_items: "{{ postgresql_databases }}"
       when: postgresql_databases is defined
       tags: postgresql_databases
 
@@ -46,10 +57,10 @@
     - name: Create users
       postgresql_user:
         encrypted: true
-        name: "{{ item.user }}"
+        name: "{{ item.name }}"
         password: "{{ item.password }}"
         role_attr_flags: "{{ item.roles | default(omit) }}"
-        state: present
+        state: "{{ item.state | default('present') }}"
       with_items:
         - "{{ postgresql_users }}"
       when: postgresql_users is defined
@@ -67,5 +78,5 @@
         objs: "{{ item.value.objs }}"
       with_dict: "{{ postgresql_privileges }}"
       when: postgresql_privileges is defined
-      tags: postgresql_privileges    
+      tags: postgresql_privileges
 ...
