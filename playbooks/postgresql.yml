@@ -31,18 +31,16 @@
       when: postgresql_settings is defined
       tags: postgresql_settings
 
-    - name: Create databases
+    - name: Create database
       postgresql_db:
         name: "{{ item.name }}"
-        encoding: "{{ item.encoding | default('UTF-8') }}"
-        template: "{{ item.template | default('template0') }}"
-        owner: "{{ item.owner | default(postgresql_user) }}"
+        owner: "{{ item.owner | default(postgres) }}"
         state: "{{ item.state | default('present') }}"
       with_items: "{{ postgresql_databases }}"
       when: postgresql_databases is defined
       tags: postgresql_databases
 
-    - name: Create schemas
+    - name: Create schema
       postgresql_schema:
         name: "{{ item.name }}"
         db: "{{ item.db }}"
