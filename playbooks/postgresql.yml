@@ -31,6 +31,18 @@
       when: postgresql_settings is defined
       tags: postgresql_settings
 
+    - name: Create users
+      postgresql_user:
+        encrypted: true
+        name: "{{ item.name }}"
+        password: "{{ item.password }}"
+        role_attr_flags: "{{ item.roles | default(omit) }}"
+        state: "{{ item.state | default('present') }}"
+      with_items:
+        - "{{ postgresql_users }}"
+      when: postgresql_users is defined
+      tags: postgresql_users
+
     - name: Create database
       postgresql_db:
         name: "{{ item.name }}"
@@ -47,18 +59,6 @@
       with_items: "{{ postgresql_schemas }}"
       when: postgresql_schemas is defined
       tags: postgresql_schemas
-
-    - name: Create users
-      postgresql_user:
-        encrypted: true
-        name: "{{ item.name }}"
-        password: "{{ item.password }}"
-        role_attr_flags: "{{ item.roles | default(omit) }}"
-        state: "{{ item.state | default('present') }}"
-      with_items:
-        - "{{ postgresql_users }}"
-      when: postgresql_users is defined
-      tags: postgresql_users
 
     - name: Set privileges
       postgresql_privs:
