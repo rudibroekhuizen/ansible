@@ -1,4 +1,3 @@
 ---
-postgresql_flavor: pgdg
-postgresql_version: '11'
+#postgresql_version: '11'
 ...
