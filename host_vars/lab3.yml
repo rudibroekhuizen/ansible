@@ -49,7 +49,7 @@ postgresql_users:
     role_attr_flags: REPLICATION
 
 postgresql_privileges:
-  - database: ndb
+  - db: ndb
     state: present
     schema: explore
     privs: SELECT
