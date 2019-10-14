@@ -1,2 +1,2 @@
 - name: postgresql_install
-  include: postgresql_install.yml
+  import_playbook: postgresql_install.yml
