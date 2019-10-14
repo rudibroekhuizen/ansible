@@ -1,5 +1,5 @@
 ---
-- name: Install PostgreSQL
+- name: Install postgres
   hosts: postgresql
   tasks:
     - name: Adding APT repository key
@@ -9,13 +9,13 @@
         id: ACCC4CF8
         url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
 
-    - name: Add PostgreSQL official APT repository
+    - name: Add postgres official APT repository
       become: true
       when: ansible_os_family == 'Debian'
       apt_repository:
         repo: "deb http://apt.postgresql.org/pub/repos/apt/ {{ansible_distribution_release}}-pgdg main"
 
-    - name: Install PostgreSQL
+    - name: Install postgres
       become: true
       when: ansible_os_family == 'Debian'
       apt:
