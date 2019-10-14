@@ -1,7 +1,7 @@
 ---
 - name: Install postgres
-  import_playbook: install_postgresql.yml
+  import_playbook: install_postgres.yml
 
 - name: Manage postgres
-  import_playbook: manage_postgresql.yml
+  import_playbook: manage_postgres.yml
 ...
