@@ -32,4 +32,5 @@
       vars:
         packages:
           - python-psycopg2
+          - python3-psycopg2
 ...
