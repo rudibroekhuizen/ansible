@@ -8,10 +8,6 @@
 - name: ansible-cumulus-metrics
   src: https://github.com/naturalis/ansible-cumulus-metrics
 
-- name: postgresql
-  version: 1.0.1
-  src:  https://github.com/galaxyproject/ansible-postgresql
-
 - name: mysql
   src: geerlingguy.mysql
 
