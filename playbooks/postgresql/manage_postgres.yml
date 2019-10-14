@@ -45,7 +45,7 @@
 
     - name: Set privileges
       postgresql_privs:
-        database: "{{ item.database }}"
+        db: "{{ item.db }}"
         state: "{{ item.state | default('present') }}"
         schema: "{{ item.schema }}"
         privs: "{{ item.privs }}"
