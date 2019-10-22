@@ -38,13 +38,13 @@ postgresql_settings:
 
 postgresql_users:
   - name: waarneming
-    password: 
+    password: bla
     role_attr_flags: LOGIN
   - name: waarneming_readonly
-    password: 
+    password: bla
     role_attr_flags: LOGIN
   - name: waarneming_analytics
-    password: 
+    password: bla
     role_attr_flags: LOGIN
 
 postgresql_databases:
