@@ -63,14 +63,14 @@ postgresql_privileges:
     type: table
     roles: geneious
     objs: ALL_IN_SCHEMA
-  - db: waarneming_readonly
+  - db: waarneming
     state: present
     schema: local_nl
     privs: SELECT
     type: table
     roles: waarneming_readonly
     objs: ALL_IN_SCHEMA
-  - db: waarneming_analytics
+  - db: waarneming
     state: present
     schema: local_nl
     privs: SELECT
