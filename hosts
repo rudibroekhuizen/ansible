@@ -3,6 +3,10 @@ localhost ansible_connection=local
 
 
 
+[waarneming]
+waarneming_db_master
+
+
 
 [firewall-dw2-primaries]
 firewall-dw2-primary-hardware
