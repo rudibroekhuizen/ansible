@@ -47,7 +47,7 @@
       postgresql_privs:
         db: "{{ item.db }}"
         state: "{{ item.state | default('present') }}"
-        schema: "{{ item.schema }}"
+        schema: "{{ item.schema | default(omit) }}"
         privs: "{{ item.privs }}"
         type: "{{ item.type }}"
         roles: "{{ item.roles }}"
@@ -55,4 +55,17 @@
       with_items: "{{ postgresql_privileges }}"
       when: postgresql_privileges is defined
       tags: postgresql_privileges
+
+    - name: Configure pg_hba
+      postgresql_pg_hba:
+        dest: "{{ item.dest }}"
+        state: "{{ item.state | default('present') }}"
+        contype: "{{ item.contype }}"
+        users: "{{ item.users }}"
+        source: "{{ item.source }}"
+        databases: "{{ item.databases }}"
+        method: "{{ item.method }}"
+      with_items: "{{ postgresql_pg_hba }}"
+      when: postgresql_pg_hba is defined
+      tags: postgresql_pg_hba
 ...
