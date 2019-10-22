@@ -52,34 +52,34 @@ postgresql_databases:
     owner: waarneming
 
 postgresql_schemas:
-  - name: local_nl,local_be
+  - name: local_nl
     db: waarneming
 
 postgresql_privileges:
   - db: waarneming
     state: present
-    schema: local_nl,local_be
+    schema: local_nl
     privs: SELECT,UPDATE,INSERT,DELETE
     type: table
     roles: geneious
     objs: ALL_IN_SCHEMA
   - db: waarneming_readonly
     state: present
-    schema: local_nl,local_be
+    schema: local_nl
     privs: SELECT
     type: table
     roles: waarneming_readonly
     objs: ALL_IN_SCHEMA
   - db: waarneming_analytics
     state: present
-    schema: local_nl,local_be
+    schema: local_nl
     privs: SELECT
     type: table
     roles: waarneming_readonly
     objs: ALL_IN_SCHEMA
 
 postgresql_pg_hba:
-  - dest: /etc/postgresql/11/main/pg_hba.conf
+  - dest: /etc/postgresql/9.6/main/pg_hba.conf
     contype: host
     users: waarneming,waarneming_readonly,waarneming_analytics
     source: 145.136.240.0/21
