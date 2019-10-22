@@ -58,18 +58,21 @@ postgresql_schemas:
 postgresql_privileges:
   - db: waarneming
     state: present
+    schema: local_nl,local_be
     privs: SELECT,UPDATE,INSERT,DELETE
     type: table
     roles: geneious
     objs: ALL_IN_SCHEMA
   - db: waarneming_readonly
     state: present
+    schema: local_nl,local_be
     privs: SELECT
     type: table
     roles: waarneming_readonly
     objs: ALL_IN_SCHEMA
   - db: waarneming_analytics
     state: present
+    schema: local_nl,local_be
     privs: SELECT
     type: table
     roles: waarneming_readonly
