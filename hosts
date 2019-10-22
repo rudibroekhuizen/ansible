@@ -39,6 +39,7 @@ lab3
 psql2
 
 [postgresql:children]
+waarneming_db_master
 postgresql-master
 postgresql-slave
 
