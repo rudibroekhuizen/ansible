@@ -33,8 +33,8 @@ postgresql_settings:
     value: 8
   - name: max_parallel_workers_per_gather
     value: 4
-  - name: max_parallel_workers
-    value: 8
+#  - name: max_parallel_workers
+#    value: 8
 
 postgresql_users:
   - name: waarneming
