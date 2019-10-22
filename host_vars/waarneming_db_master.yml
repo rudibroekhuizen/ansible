@@ -51,6 +51,10 @@ postgresql_databases:
   - name: waarneming
     owner: waarneming
 
+postgresql_schemas:
+  - name: local_nl,local_be
+    db: waarneming
+
 postgresql_privileges:
   - db: waarneming
     state: present
