@@ -1,0 +1,79 @@
+ansible_host: 192.168.56.6
+
+postgresql_settings:
+  - name: listen_addresses
+    value: '*'
+  - name: max_connections
+    value: 200
+  - name: shared_buffers
+    value: 8GB
+  - name: effective_cache_size
+    value: 24GB
+  - name: maintenance_work_mem
+    value: 2GB
+  - name: checkpoint_completion_target
+    value: 0.7
+  - name: wal_buffers
+    value: 16MB
+  - name: default_statistics_target
+    value: 100
+  - name: random_page_cost
+    value: 1.1
+  - name: effective_io_concurrency
+    value: 200
+  - name: work_mem
+    value: 10485kB
+  - name: min_wal_size
+    value: 1GB
+  - name: max_wal_size
+    value: 2GB 
+  - name: max_worker_processes
+    value: 8
+  - name: max_parallel_workers_per_gather
+    value: 4
+  - name: max_parallel_workers
+    value: 8
+
+postgresql_users:
+  - name: waarneming
+    password: 
+    role_attr_flags: LOGIN
+  - name: waarneming_readonly
+    password: 
+    role_attr_flags: LOGIN
+  - name: waarneming_analytics
+    password: 
+    role_attr_flags: LOGIN
+
+postgresql_databases:
+  - name: waarneming
+    owner: waarneming
+
+postgresql_privileges:
+  - db: waarneming
+    state: present
+    privs: SELECT,UPDATE,INSERT,DELETE
+    type: table
+    roles: geneious
+    objs: ALL_IN_SCHEMA
+  - db: waarneming_readonly
+    state: present
+    privs: SELECT
+    type: table
+    roles: waarneming_readonly
+    objs: ALL_IN_SCHEMA
+  - db: waarneming_analytics
+    state: present
+    privs: SELECT
+    type: table
+    roles: waarneming_readonly
+    objs: ALL_IN_SCHEMA
+
+postgresql_pg_hba:
+  - dest: /etc/postgresql/11/main/pg_hba.conf
+    contype: host
+    users: waarneming,waarneming_readonly,waarneming_analytics
+    source: 145.136.240.0/21
+    databases: waarneming
+    method: md5
+...
