@@ -13,13 +13,16 @@
           *:5432:*:{{ replication_user }}:{{ replication_password }}
 
 #    - name: Set up replicator credentials
+16
 #      template:
+17
 #        src: ".pgpass.j2"
+18
 #        dest: "/etc/postgresql/.pgpass"
+19
 #        owner: postgres
-#        mode: 0600
-
-    - name: Check if receiver process is running
+20
+#        mode: 0600    - name: Check if receiver process is running
       shell: pgrep -a postgres | grep streaming
       register: ps_receiver
       changed_when: ps_receiver.rc != 2
