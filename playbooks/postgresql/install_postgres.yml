@@ -29,9 +29,4 @@
       when: ansible_os_family == 'Debian'
       apt:
         name: "{{ packages }}"
-      vars:
-        packages:
-          - python-psycopg2
-          - python3-psycopg2
-          - python-ipaddress
 ...
