@@ -1,0 +1,68 @@
+---
+- name: Create slave
+  hosts: postgresql_slave
+  become: true
+  tasks:
+    - name: Set up replicator credentials
+      template:
+        src: "../templates/.pgpass.j2"
+        dest: "/etc/postgresql/.pgpass"
+        owner: postgres
+        mode: 0600
+
+    - name: Check if receiver process is running
+      shell: pgrep -a postgres | grep receive
+      register: ps_receiver
+      changed_when: ps_receiver.rc != 1
+      failed_when: ps_receiver.rc == 1
+      tags:
+        - replica
+
+    - name: Setup replication | stop postgresql service
+      systemd:
+        name: postgresql
+        state: stopped
+      when: ps_receiver.stdout_lines|count == 0
+      tags:
+        - replica
+
+    - name: Setup replication | cleanup postgresql dir
+      file:
+        path: "{{ postgresql_data_directory }}"
+        state: absent
+      when: ps_receiver.stdout_lines|count == 0
+      tags:
+        - replica
+
+    - name: Setup replication | start replica
+      command: >
+        PGPASSFILE=/etc/postgresql/.pgpass pg_basebackup \
+          --host=192.168.56.6 \
+          --username=async_slave \
+          --write-recovery-conf \
+          --pgdata={{ postgresql_data_directory }} \
+          --progress \
+          --xlog-method=fetch \
+      become_user: postgres
+      when: ps_receiver.stdout_lines|count == 0
+      tags:
+        - replica
+
+    - name: Setup replication | start postgresql service
+      systemd:
+        name: postgresql
+        state: started
+      when: ps_receiver.stdout_lines|count == 0
+      tags:
+        - replica
+
+    - name: Check if receiver process is running
+      shell: pgrep -a postgres | grep receive
+      ignore_errors: yes
+      register: ps_receiver_standby
+      until: ps_receiver_standby.stdout.find("wal receiver process") != -1
+      retries: 10
+      delay: 5
+      tags:
+        - replica
+...
