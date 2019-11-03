@@ -1,1 +1,15 @@
+---
 ansible_host: 192.168.56.7
+
+postgresql_version: '11'
+
+postgresql_data_directory: /var/lib/postgresql/11/main
+
+packages:
+  - python-psycopg2
+  - python3-psycopg2
+
+postgresql_set:
+  - name: listen_addresses
+    value: '*'
+...
