@@ -3,6 +3,10 @@ ansible_host: 192.168.56.7
 
 postgresql_version: '11'
 
+replication_user: replicator
+
+replication_password: password
+
 postgresql_data_directory: /var/lib/postgresql/11/main
 
 packages:
