@@ -1,19 +1,18 @@
 ---
 ansible_host: 192.168.56.6
 
-postgresql_settings:
-  - name: work_mem
-    value: 32MB
+postgresql_version: '11'
 
-postgresql_databases:
-  - name: ndb
-    owner: postgres
+packages:
+  - python-psycopg2
+  - python3-psycopg2
+  - python-ipaddress
 
-postgresql_schemas:
-  - name: explore
-    db: ndb
+postgresql_set:
+  - name: listen_addresses
+    value: '*'
 
-postgresql_users:
+postgresql_user:
   - name: ndb_readonly
     password: password
     db: ndb
@@ -23,7 +22,15 @@ postgresql_users:
     db: ndb
     role_attr_flags: REPLICATION
 
-postgresql_privileges:
+postgresql_db:
+  - name: ndb
+    owner: postgres
+
+postgresql_schema:
+  - name: explore
+    db: ndb
+
+postgresql_privs:
   - db: ndb
     state: present
     schema: explore
@@ -31,4 +38,12 @@ postgresql_privileges:
     type: table
     roles: ndb_readonly
     objs: ALL_IN_SCHEMA
+    
+postgresql_pg_hba:
+  - dest: /etc/postgresql/11/main/pg_hba.conf
+    contype: host
+    users: ndb_readonly, replicator
+    source: 192.168.56.0/24
+    databases: ndb
+    method: md5
 ...
