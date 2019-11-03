@@ -3,11 +3,6 @@ localhost ansible_connection=local
 
 
 
-[waarneming]
-waarneming_db_master
-
-
-
 [firewall-dw2-primaries]
 firewall-dw2-primary-hardware
 firewall-dw2-primary-virtualbox
@@ -31,12 +26,11 @@ rvs-fwl-2
 
 
 
-[postgresql-master]
+[postgresql_master]
 psql1
 lab3
-waarneming_db_master
 
-[postgresql-slave]
+[postgresql_slave]
 psql2
 
 [postgresql:children]
