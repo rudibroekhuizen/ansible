@@ -4,11 +4,20 @@
   become: true
   tasks:
     - name: Set up replicator credentials
-      template:
-        src: ".pgpass.j2"
-        dest: "/etc/postgresql/.pgpass"
+      blockinfile:
+        path: "/etc/postgresql/.pgpass"
         owner: postgres
         mode: 0600
+        create: yes
+        block: |
+          {{ hostvars[groups.postgresql_master.0].postgresql_interface_ipv4 }}:5432:*:{{ replication_user }}:{{ replication_password }}
+
+#    - name: Set up replicator credentials
+#      template:
+#        src: ".pgpass.j2"
+#        dest: "/etc/postgresql/.pgpass"
+#        owner: postgres
+#        mode: 0600
 
     - name: Check if receiver process is running
       shell: pgrep -a postgres | grep streaming
