@@ -16,10 +16,4 @@ packages:
 postgresql_set:
   - name: listen_addresses
     value: '*'
-    
-postgresql_user:
-  - name: replicator
-    password: password
-    db: ndb
-    role_attr_flags: REPLICATION    
 ...
