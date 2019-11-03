@@ -46,4 +46,10 @@ postgresql_pg_hba:
     source: 192.168.56.0/24
     databases: ndb
     method: md5
+  - dest: /etc/postgresql/11/main/pg_hba.conf
+    contype: host
+    users: replicator
+    source: 192.168.56.0/24
+    databases: replication
+    method: md5
 ...
