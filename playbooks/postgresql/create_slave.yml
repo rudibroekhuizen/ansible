@@ -13,8 +13,8 @@
     - name: Check if receiver process is running
       shell: pgrep -a postgres | grep receive
       register: ps_receiver
-      changed_when: ps_receiver.rc != 1
-      failed_when: ps_receiver.rc == 1
+      changed_when: ps_receiver.rc != 2
+      failed_when: ps_receiver.rc == 2
       tags:
         - replica
 
@@ -30,6 +30,17 @@
       file:
         path: "{{ postgresql_data_directory }}"
         state: absent
+      when: ps_receiver.stdout_lines|count == 0
+      tags:
+        - replica
+
+    - name: Setup replication | create postgresql dir
+      file:
+        path: "{{ postgresql_data_directory }}"
+        state: directory
+	      owner: postgres
+	      group: postgres
+	      mode: 0700
       when: ps_receiver.stdout_lines|count == 0
       tags:
         - replica
