@@ -34,8 +34,8 @@ lab3
 psql2
 
 [postgresql:children]
-postgresql-master
-postgresql-slave
+postgresql_master
+postgresql_slave
 
 
 
