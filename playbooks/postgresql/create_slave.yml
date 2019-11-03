@@ -10,7 +10,7 @@
         mode: 0600
         create: yes
         block: |
-          {{ hostvars[groups.postgresql_master.0].postgresql_interface_ipv4 }}:5432:*:{{ replication_user }}:{{ replication_password }}
+          *:5432:*:{{ replication_user }}:{{ replication_password }}
 
 #    - name: Set up replicator credentials
 #      template:
