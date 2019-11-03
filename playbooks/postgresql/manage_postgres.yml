@@ -10,9 +10,9 @@
         value: "{{ item.value }}"
         register: "{{ item.register | default(omit) }}"
       with_items:
-        - "{{ postgresql_settings }}"
-      when: postgresql_settings is defined
-      tags: postgresql_settings
+        - "{{ postgresql_set }}"
+      when: postgresql_set is defined
+      tags: postgresql_set
 
     - name: Create users
       postgresql_user:
@@ -22,26 +22,34 @@
         role_attr_flags: "{{ item.roles | default(omit) }}"
         state: "{{ item.state | default('present') }}"
       with_items:
-        - "{{ postgresql_users }}"
-      when: postgresql_users is defined
-      tags: postgresql_users
+        - "{{ postgresql_user }}"
+      when: postgresql_user is defined
+      tags: postgresql_user
 
     - name: Create database
       postgresql_db:
         name: "{{ item.name }}"
         owner: "{{ item.owner | default(postgres) }}"
         state: "{{ item.state | default('present') }}"
-      with_items: "{{ postgresql_databases }}"
-      when: postgresql_databases is defined
-      tags: postgresql_databases
+      with_items: "{{ postgresql_db }}"
+      when: postgresql_db is defined
+      tags: postgresql_db
+
+    - name: Adds extensions
+      postgresql_ext:
+        name: "{{ item.name }}"
+        db: "{{ item.db }}"
+      with_items: "{{ postgresql_ext }}"
+      when: postgresql_ext is defined
+      tags: postgresql_ext
 
     - name: Create schema
       postgresql_schema:
         name: "{{ item.name }}"
         db: "{{ item.db }}"
-      with_items: "{{ postgresql_schemas }}"
-      when: postgresql_schemas is defined
-      tags: postgresql_schemas
+      with_items: "{{ postgresql_schema }}"
+      when: postgresql_schema is defined
+      tags: postgresql_schema
 
     - name: Set privileges
       postgresql_privs:
@@ -52,10 +60,10 @@
         type: "{{ item.type }}"
         roles: "{{ item.roles }}"
         objs: "{{ item.objs }}"
-      with_items: "{{ postgresql_privileges }}"
-      when: postgresql_privileges is defined
-      tags: postgresql_privileges
-
+      with_items: "{{ postgresql_privs }}"
+      when: postgresql_privs is defined
+      tags: postgresql_privs
+      
     - name: Configure pg_hba
       postgresql_pg_hba:
         dest: "{{ item.dest }}"
@@ -68,4 +76,12 @@
       with_items: "{{ postgresql_pg_hba }}"
       when: postgresql_pg_hba is defined
       tags: postgresql_pg_hba
+
+    - name: Run queries
+      postgresql_query:
+        db: "{{ item.db }}"
+        query: "{{ item.query }}"
+      with_items: "{{ postgresql_query }}"
+      when: postgresql_query is defined
+      tags: postgresql_query
 ...
