@@ -49,11 +49,9 @@
       command: >
         PGPASSFILE=/etc/postgresql/.pgpass pg_basebackup \
           --host=192.168.56.6 \
-          --username=async_slave \
+          --username=replicator \
           --write-recovery-conf \
-          --pgdata={{ postgresql_data_directory }} \
-          --progress \
-          --xlog-method=fetch \
+          --pgdata={{ postgresql_data_directory }}
       become_user: postgres
       when: ps_receiver.stdout_lines|count == 0
       tags:
