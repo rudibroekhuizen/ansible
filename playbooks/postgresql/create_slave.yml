@@ -11,10 +11,10 @@
         mode: 0600
 
     - name: Check if receiver process is running
-      shell: pgrep -a postgres | grep receive
+      shell: pgrep -a postgres | grep streaming
       register: ps_receiver
-      changed_when: ps_receiver.rc != 2
-      failed_when: ps_receiver.rc == 2
+      changed_when: ps_receiver.rc != 1
+      failed_when: ps_receiver.rc == 1
       tags:
         - replica
 
@@ -66,10 +66,10 @@
         - replica
 
     - name: Check if receiver process is running
-      shell: pgrep -a postgres | grep receive
+      shell: pgrep -a postgres | grep streaming
       ignore_errors: yes
       register: ps_receiver_standby
-      until: ps_receiver_standby.stdout.find("wal receiver process") != -1
+      until: ps_receiver_standby.stdout.find("streaming") != -1
       retries: 10
       delay: 5
       tags:
