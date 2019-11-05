@@ -19,7 +19,7 @@
         encrypted: true
         name: "{{ item.name }}"
         password: "{{ item.password }}"
-        role_attr_flags: "{{ item.roles | default(omit) }}"
+        role_attr_flags: "{{ item.role_attr_flags }}"
         state: "{{ item.state | default('present') }}"
       with_items:
         - "{{ postgresql_user }}"
