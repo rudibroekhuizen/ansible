@@ -19,7 +19,7 @@ postgresql_user:
     role_attr_flags: LOGIN
   - name: replicator
     password: password
-    role_attr_flags: LOGIN,INHERIT,REPLICATION
+    role_attr_flags: REPLICATION
 
 postgresql_db:
   - name: ndb
