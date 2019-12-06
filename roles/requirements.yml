@@ -7,6 +7,11 @@
   version: old_school_base_with_users
   name: base
 
+- src: https://gitlab.com/naturalis/lib/ansible-postgresql
+  scm: git
+  version: master
+  name: postgresql
+
 - name: cumuluslinux
   src: https://github.com/maxlareo/ansible-cumuluslinux
 
