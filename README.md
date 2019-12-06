@@ -23,7 +23,7 @@ cd /home/ansible/ansible/
 ```
 
 
-#### Run playbook
+#### Run a playbook
 ```bash
-ansible-playbook playbooks/postgresql.yml
+ansible-playbook playbooks/base.yml -l localhost
 ```
