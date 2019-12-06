@@ -2,6 +2,11 @@
 # This is used to manage Ansible role dependences
 # http://docs.ansible.com/galaxy.html#installing-multiple-roles-from-a-file
 # Install with: 'ansible-galaxy install -r requirements.yml --roles-path .'
+- src: https://gitlab.com/naturalis/lib/ansible-base.git
+  scm: git
+  version: old_school_base_with_users
+  name: base
+
 - name: cumuluslinux
   src: https://github.com/maxlareo/ansible-cumuluslinux
 
