@@ -1,0 +1,9 @@
+---
+- name: Install PostgreSQL
+  hosts: all
+  gather_facts: false
+  become: true
+  tags: postgresql
+  roles:
+    - postgresql
+...
