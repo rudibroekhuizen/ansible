@@ -47,13 +47,13 @@ postgresql_privs:
     objs: ALL_IN_SCHEMA
     
 postgresql_pg_hba:
-  - dest: /etc/postgresql/11/main/pg_hba.conf
+  - dest: /etc/postgresql/12/main/pg_hba.conf
     contype: host
     users: ndb_readonly, replicator
     source: 192.168.56.0/24
     databases: ndb
     method: md5
-  - dest: /etc/postgresql/11/main/pg_hba.conf
+  - dest: /etc/postgresql/12/main/pg_hba.conf
     contype: host
     users: replicator
     source: 192.168.56.0/24
