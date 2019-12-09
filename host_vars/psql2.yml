@@ -7,7 +7,7 @@ replication_user: replicator
 
 replication_password: password
 
-postgresql_data_directory: /var/lib/postgresql/11/main
+postgresql_data_directory: /var/lib/postgresql/12/main
 
 packages:
   - python-psycopg2
