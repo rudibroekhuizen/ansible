@@ -12,7 +12,7 @@ postgresql_set:
   - name: listen_addresses
     value: '*'
   - name: shared_preload_libraries
-    value: decoderbufs,wal2json 
+    value: decoderbufs,wal2json
   - name: wal_level
     value: logical
   - name: max_wal_senders
