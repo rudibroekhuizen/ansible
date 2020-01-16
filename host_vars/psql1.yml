@@ -59,4 +59,25 @@ postgresql_pg_hba:
     source: 192.168.56.0/24
     databases: replication
     method: md5
+
+restic_repos:
+- name: s3-example
+  url: "s3:s3.amazonaws.com/bucket_name/restic"
+  password: "dolphins"
+  remote_credentials:
+    aws_access_key_id: "AWS_ACCESS_KEY_ID"
+    aws_secret_access_key: "AWS_SECRET_ACCESS_KEY"
+  jobs:
+    - command: 'restic backup /srv'
+      at: '0 1  * * *'
+  retention_time: '17 5 * * *'
+  retention:
+    last: 2
+    hourly: 4
+    daily: 10
+    weekly: 9
+    monthly: 3
+    yearly: 10
+    tags:
+      - special
 ...
