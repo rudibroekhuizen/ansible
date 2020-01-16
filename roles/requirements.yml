@@ -4,10 +4,8 @@
 # Install with: 'ansible-galaxy install -f -r requirements.yml --roles-path .'
 
 - name: base
-  src: https://gitlab.com/naturalis/lib/ansible-base.git
+  src: https://gitlab.com/naturalis/lib/ansible-base-role.git
   scm: git
-  version: old_school_base_with_users
-
 
 - name: postgresql
   src: https://gitlab.com/naturalis/lib/ansible-postgresql
