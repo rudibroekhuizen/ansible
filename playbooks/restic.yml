@@ -1,7 +1,7 @@
 ---
-- name: Install restic
+- name: Install and manage Restic
+  hosts: all
   become: yes
-  import_role:
-    name: restic
-    tasks_from: install.yml
+  roles:
+    - restic
 ...
