@@ -3,15 +3,16 @@
 # http://docs.ansible.com/galaxy.html#installing-multiple-roles-from-a-file
 # Install with: 'ansible-galaxy install -f -r requirements.yml --roles-path .'
 
-- src: https://gitlab.com/naturalis/lib/ansible-base.git
+- name: base
+  src: https://gitlab.com/naturalis/lib/ansible-base.git
   scm: git
   version: old_school_base_with_users
-  name: base
 
-- src: https://gitlab.com/naturalis/lib/ansible-postgresql
+
+- name: postgresql
+  src: https://gitlab.com/naturalis/lib/ansible-postgresql
   scm: git
-  version: master
-  name: postgresql
+  version: master 
 
 - name: cumuluslinux
   src: https://github.com/maxlareo/ansible-cumuluslinux
@@ -27,4 +28,8 @@
 
 - name: logrotate
   src: nickhammond.logrotate
+
+- name: restic
+  src: https://github.com/paulfantom/ansible-restic
+  version: 0.15.0
 ...
