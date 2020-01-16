@@ -1,0 +1,7 @@
+---
+- name: Install restic
+  become: yes
+  import_role:
+    name: restic
+    tasks_from: install.yml
+...
