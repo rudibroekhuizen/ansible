@@ -1,7 +1,10 @@
-# playbook Docker
 ---
+#apt install python-pip
+#pip install docker
+
 - name: Install Docker on localhost
-  hosts: localhost
+  hosts: docker_hosts
   become: yes
   roles:
     - docker
+...
