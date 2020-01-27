@@ -2,7 +2,7 @@
 #apt install python-pip
 #pip install docker
 
-- name: Install Docker on localhost
+- name: Install Docker
   hosts: docker_hosts
   become: yes
   roles:
