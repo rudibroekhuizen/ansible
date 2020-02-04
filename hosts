@@ -3,61 +3,56 @@ localhost ansible_connection=local
 
 
 
-[firewall-dw2-primaries]
+[firewall_dw2_primaries]
 firewall-dw2-primary-hardware
 firewall-dw2-primary-virtualbox
 
-[firewall-dw2-secondaries]
+[firewall_dw2_secondaries]
 firewall-dw2-secondary-hardware
 firewall-dw2-secondary-virtualbox
 
-[firewall-dw2:children]
+[firewall_dw2:children]
 firewall-dw2-primaries
 firewall-dw2-secondaries
 
-[firewall-all:children]
+[firewall_all:children]
 firewall-dw2
 firewall-rvs
 
-[firewall-rvs]
-rvs-fwl-1
-rvs-fwl-2
 
 
-
-
-[postgresql_master]
+[postgres_master]
 psql1
 lab3
 
-[postgresql_slave]
+[postgres_slave]
 psql2
 
-[postgresql:children]
-postgresql_master
-postgresql_slave
+[postgres:children]
+postgres_master
+postgres_slave
 
 
 
 
-[rsyslog-servers]
+[rsyslog_servers]
 rsyslog-server
 
-[rsyslog-clients:children]
+[rsyslog_clients:children]
 cumulus-leafs
 cumulus-spines
 
 
 
 
-[cumulus-leafs]
+[cumulus_leafs]
 leaf01
 leaf02
 
-[cumulus-spines]
+[cumulus_spines]
 spine01
 spine02
 
-[cumulus-network:children]
+[cumulus_network:children]
 cumulus-leafs
 cumulus-spines
