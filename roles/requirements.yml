@@ -7,7 +7,7 @@
   src: https://gitlab.com/naturalis/lib/ansible-base-role.git
   scm: git
 
-- name: postgresql
+- name: postgres
   src: https://gitlab.com/naturalis/lib/ansible-postgresql
   scm: git
   version: master 
