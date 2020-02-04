@@ -1,18 +1,18 @@
 ---
 - name: Install and manage PostgreSQL
-  hosts: postgres
+  hosts: postgresql
   become: true
   gather_facts: true
   roles:
-    - postgres
+    - postgresql
   tags:
-    - postgres
+    - postgresql
 
 - name: Create slave
-  hosts: postgres_slave
+  hosts: postgresql_slave
   become: true
   roles:
-    - postgres
+    - postgresql
   tags:
     - create_slave
 ...
