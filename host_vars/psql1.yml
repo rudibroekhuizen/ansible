@@ -11,10 +11,8 @@ packages:
 postgresql_set:
   - name: listen_addresses
     value: '*'
-  - name: shared_preload_libraries
-    value: decoderbufs,wal2json
   - name: wal_level
-    value: logical
+    value: replica
   - name: max_wal_senders
     value: 4
   - name: max_replication_slots
