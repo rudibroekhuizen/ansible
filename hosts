@@ -18,15 +18,15 @@ firewall_dw2_secondaries
 
 
 
-[postgres_master]
+[postgresql_master]
 psql1
 
-[postgres_slave]
+[postgresql_slave]
 psql2
 
-[postgres:children]
-postgres_master
-postgres_slave
+[postgresql:children]
+postgresql_master
+postgresql_slave
 
 
 
