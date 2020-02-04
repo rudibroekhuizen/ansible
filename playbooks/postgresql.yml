@@ -14,5 +14,6 @@
   roles:
     - postgresql
   tags:
+    - never
     - create_slave
 ...
