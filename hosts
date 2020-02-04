@@ -12,12 +12,9 @@ firewall-dw2-secondary-hardware
 firewall-dw2-secondary-virtualbox
 
 [firewall_dw2:children]
-firewall-dw2-primaries
-firewall-dw2-secondaries
+firewall_dw2_primaries
+firewall_dw2_secondaries
 
-[firewall_all:children]
-firewall-dw2
-firewall-rvs
 
 
 
@@ -54,5 +51,5 @@ spine01
 spine02
 
 [cumulus_network:children]
-cumulus-leafs
-cumulus-spines
+cumulus_leafs
+cumulus_spines
