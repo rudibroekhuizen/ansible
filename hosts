@@ -20,7 +20,6 @@ firewall_dw2_secondaries
 
 [postgres_master]
 psql1
-lab3
 
 [postgres_slave]
 psql2
