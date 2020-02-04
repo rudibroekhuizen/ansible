@@ -7,4 +7,16 @@
     - postgres
   tags:
     - postgres
+
+- name: Create slave
+  hosts: postgres_slave
+  become: true
+  roles:
+    - postgres
+  tags:
+    - create_slave
+  fail:
+    msg: "you must use -l or --limit"
+  when: ansible_limit is not defined
+  run_once: true
 ...
