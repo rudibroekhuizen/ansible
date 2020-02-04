@@ -36,8 +36,8 @@ postgres_slave
 rsyslog-server
 
 [rsyslog_clients:children]
-cumulus-leafs
-cumulus-spines
+cumulus_leafs
+cumulus_spines
 
 
 
