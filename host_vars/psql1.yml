@@ -8,7 +8,7 @@ packages:
   - python3-psycopg2
   - python-ipaddress
 
-postgresql_set:
+postgresql_conf:
   - name: listen_addresses
     value: '*'
   - name: wal_level
