@@ -15,7 +15,7 @@ packages:
   - python-psycopg2
   - python3-psycopg2
 
-postgresql_set:
+postgresql_conf:
   - name: listen_addresses
     value: '*'
 ...
