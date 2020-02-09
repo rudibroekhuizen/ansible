@@ -3,17 +3,31 @@
   hosts: postgresql
   become: true
   gather_facts: true
-  roles:
-    - postgresql
+  tasks:
+    - include_role:
+        name: postgresql
   tags:
     - postgresql
+
+- name: Create backup
+  hosts: postgresql
+  become: true
+  gather_facts: true
+  tasks:
+    - include_role:
+        name: postgresql
+        tasks_from: create_backup.yml
+  tags:
+    - create_backup
 
 - name: Create slave
   hosts: postgresql_slave
   become: true
-  roles:
-    - postgresql
+  gather_facts: true
+  tasks:
+    - include_role:
+        name: postgresql
+        tasks_from: create_slave.yml
   tags:
-    - never
     - create_slave
 ...
