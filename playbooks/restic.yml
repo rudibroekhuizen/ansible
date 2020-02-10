@@ -1,7 +1,10 @@
 ---
 - name: Install and manage Restic
   hosts: all
-  become: yes
-  roles:
+  become: true
+  tasks:
+    - include_role:
+        name: restic
+  tags:
     - restic
 ...
