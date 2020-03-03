@@ -18,4 +18,12 @@ packages:
 postgresql_conf:
   - name: listen_addresses
     value: '*'
+  - name: wal_level
+    value: replica
+  - name: max_wal_senders
+    value: 4
+  - name: max_replication_slots
+    value: 4
+  - name: hot_standby
+    value: on
 ...
