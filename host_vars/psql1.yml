@@ -17,6 +17,8 @@ postgresql_conf:
     value: 4
   - name: max_replication_slots
     value: 4
+  - name: hot_standby
+    value: on
 
 postgresql_user:
   - name: ndb_readonly
