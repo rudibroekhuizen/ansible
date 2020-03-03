@@ -10,7 +10,7 @@
     - postgresql
 
 - name: Create backup
-  hosts: postgresql
+  hosts: postgresql_master
   become: true
   gather_facts: true
   tasks:
