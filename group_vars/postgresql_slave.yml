@@ -12,6 +12,7 @@ postgresql_data_directory: /var/lib/postgresql/12/main
 packages:
   - python-psycopg2
   - python3-psycopg2
+  - python-ipaddress
 
 postgresql_conf:
   - name: listen_addresses
