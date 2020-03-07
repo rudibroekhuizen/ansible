@@ -1,6 +1,10 @@
 ---
 postgresql_version: '12'
 
+packages:
+  - python-psycopg2
+  - python3-psycopg2
+
 postgresql_conf:
   - name: listen_addresses
     value: '*'
