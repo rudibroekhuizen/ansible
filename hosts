@@ -3,6 +3,13 @@ localhost ansible_connection=local
 
 
 
+
+[docker_hosts]
+psql1
+
+
+
+
 [firewall_dw2_primaries]
 firewall-dw2-primary-hardware
 firewall-dw2-primary-virtualbox
