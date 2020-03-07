@@ -1,4 +1,6 @@
 ---
+postgresql_version: '12'
+
 postgresql_conf:
   - name: listen_addresses
     value: '*'
