@@ -27,7 +27,7 @@
 - name: logrotate
   src: nickhammond.logrotate
 
-- name: restic
-  src: https://github.com/paulfantom/ansible-restic
-  version: 0.15.0
+- src: https://github.com/paulfantom/ansible-restic
+  version: 1f93948
+  name: restic
 ...
