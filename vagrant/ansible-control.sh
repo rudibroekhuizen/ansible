@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ANSIBLE_USER="ansible"
+ANSIBLE_PROJECT="https://gitlab.com/naturalis/lib/analytics/ansible-analytics"
 
 # Install Ansible
 apt-get update
@@ -28,7 +29,8 @@ echo -e '192.168.56.6\n192.168.56.7' >> /etc/ansible/hosts
 sed -i 's/#host_key_checking/host_key_checking/g' /etc/ansible/ansible.cfg
 
 # Download Ansible base project
-su $ANSIBLE_USER -c "git clone https://github.com/rudibroekhuizen/ansible ~/ansible-myansibleproject"
+$ANSIBLE_USER -c $ANSIBLE_PROJECT
+#su $ANSIBLE_USER -c "git clone https://github.com/rudibroekhuizen/ansible ~/ansible-myansibleproject"
 
 # Download Ansible roles
 su $ANSIBLE_USER -c "ansible-galaxy install -r ~/ansible/roles/requirements.yml -p ~/ansible/roles"
