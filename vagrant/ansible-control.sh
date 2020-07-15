@@ -29,8 +29,8 @@ echo -e '192.168.56.6\n192.168.56.7' >> /etc/ansible/hosts
 sed -i 's/#host_key_checking/host_key_checking/g' /etc/ansible/ansible.cfg
 
 # Download Ansible base project
-$ANSIBLE_USER -c 'git clone $ANSIBLE_PROJECT ~'
+su $ANSIBLE_USER -c 'git clone $ANSIBLE_PROJECT ~/ansible-project'
 #su $ANSIBLE_USER -c "git clone https://github.com/rudibroekhuizen/ansible ~/ansible-myansibleproject"
 
 # Download Ansible roles
-su $ANSIBLE_USER -c "ansible-galaxy install -r ~/ansible/roles/requirements.yml -p ~/ansible/roles"
+su $ANSIBLE_USER -c "ansible-galaxy install -r ~/ansible-project/roles/requirements.yml -p ~/ansible/roles"
