@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ANSIBLE_USER=ansible
-ANSIBLE_PROJECT=https://gitlab.com/naturalis/lib/analytics/ansible-analytics
+ANSIBLE_PROJECT=https://github.com/rudibroekhuizen/ansible
 
 # Install Ansible
 apt-get update
