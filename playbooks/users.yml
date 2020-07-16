@@ -1,0 +1,10 @@
+---
+- name: Install users
+  hosts: all
+  become: true
+  tasks:
+    - include_role:
+        name: users
+  tags:
+    - users
+...
