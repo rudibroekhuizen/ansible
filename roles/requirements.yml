@@ -7,6 +7,11 @@
   src: https://gitlab.com/naturalis/lib/ansible-base-role.git
   scm: git
 
+- src: https://gitlab.com/naturalis/lib/ansible-users-sshkeys-role
+  scm: git
+  version: 0.0.1
+  name: users
+
 - name: postgresql
   src: https://gitlab.com/naturalis/lib/ansible-postgresql
   scm: git
