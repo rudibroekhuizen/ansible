@@ -22,8 +22,12 @@ su ansible
 cd /home/ansible/ansible/
 ```
 
-
-#### Run a playbook
+#### Install base 
 ```bash
-ansible-playbook playbooks/postgresql.yml -l psql1
+ansible-playbook playbooks/base.yml -l psql1
+```
+
+#### Create users
+```
+ansible-playbook playbooks/users.yml -l psql1
 ```
