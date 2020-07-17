@@ -4,7 +4,7 @@ Ansible point of departure.
 
 #### To set up test environment:
 
-```bash
+```sh
 git clone https://github.com/rudibroekhuizen/ansible
 cd ansible/vagrant
 vagrant up
@@ -30,4 +30,8 @@ ansible-playbook playbooks/base.yml -l psql1
 #### Create users
 ```
 ansible-playbook playbooks/users.yml -l psql1
+```
+#### Login to vm
+```sh
+ssh 127.0.0.1 -p 22223
 ```
