@@ -1,38 +1,35 @@
 ---
-# This is used to manage Ansible role dependences
-# http://docs.ansible.com/galaxy.html#installing-multiple-roles-from-a-file
-# Install with: 'ansible-galaxy install -f -r requirements.yml --roles-path .'
-
-- name: base
-  src: https://gitlab.com/naturalis/lib/ansible-base-role.git
-  scm: git
-
-- src: https://gitlab.com/naturalis/lib/ansible-users-sshkeys-role
-  scm: git
-  version: 0.0.1
-  name: users
-
-- name: postgresql
-  src: https://gitlab.com/naturalis/lib/ansible-postgresql
-  scm: git
-  version: master 
-
-- name: cumuluslinux
-  src: https://github.com/maxlareo/ansible-cumuluslinux
-
-- name: ansible-cumulus-metrics
-  src: https://github.com/naturalis/ansible-cumulus-metrics
-
-- name: mysql
-  src: geerlingguy.mysql
-
-- name: docker
-  src: geerlingguy.docker
-
-- name: logrotate
-  src: nickhammond.logrotate
-
-- src: https://github.com/paulfantom/ansible-restic
-  version: 1f93948
-  name: restic
+# This is used to manage Ansible role and collection dependencies
+# See: https://docs.ansible.com/ansible/latest/galaxy/user_guide.html#installing-roles-and-collections-from-the-same-requirements-yml-file
+# Install roles with: `ansible-galaxy role install -r requirements.yml -p ./roles/`
+# Install collections with: `ansible-galaxy collection install -r requirements.yml -p ./collections/`
+roles:
+  - name: base
+    src: https://gitlab.com/naturalis/lib/ansible-base-role.git
+    scm: git
+  - name: users
+    src: https://gitlab.com/naturalis/lib/ansible-users-sshkeys-role
+    scm: git
+    version: 0.0.1
+  - name: unattended-upgrades
+    src: https://github.com/jnv/ansible-role-unattended-upgrades.git
+    scm: git
+    version: master 
+  - name: postgresql
+    src: https://gitlab.com/naturalis/lib/ansible-postgresql
+    scm: git
+    version: master 
+  - name: cumuluslinux
+    src: https://github.com/maxlareo/ansible-cumuluslinux
+  - name: ansible-cumulus-metrics
+    src: https://github.com/naturalis/ansible-cumulus-metrics
+  - name: mysql
+    src: geerlingguy.mysql
+  - name: docker
+    src: geerlingguy.docker
+  - name: logrotate
+    src: nickhammond.logrotate
+  - src: https://github.com/paulfantom/ansible-restic
+    version: 1f93948
+    name: restic
 ...
