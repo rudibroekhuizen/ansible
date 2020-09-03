@@ -1,7 +1,7 @@
 ---
 - name: unattended-upgrades
   hosts: all
-  gather_facts: false
+  gather_facts: true
   become: true
   tags: unattended-upgrades
   roles:
