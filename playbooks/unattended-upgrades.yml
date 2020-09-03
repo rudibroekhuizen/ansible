@@ -1,0 +1,9 @@
+---
+- name: unattended-upgrades
+  hosts: all
+  gather_facts: false
+  become: true
+  tags: unattended-upgrades
+  roles:
+    - unattended-upgrades
+...
