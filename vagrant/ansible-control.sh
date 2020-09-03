@@ -33,4 +33,4 @@ su $ANSIBLE_USER -c "git clone $ANSIBLE_PROJECT ~/ansible-project"
 #su $ANSIBLE_USER -c "git clone https://github.com/rudibroekhuizen/ansible ~/ansible-myansibleproject"
 
 # Download Ansible roles
-su $ANSIBLE_USER -c "ansible-galaxy install -r ~/ansible-project/roles/requirements.yml -p ~/ansible-project/roles"
+su $ANSIBLE_USER -c "ansible-galaxy install -r ~/ansible-project/requirements.yml -p ~/ansible-project/roles"
