@@ -19,7 +19,7 @@ vagrant ssh vb-01
 ```bash
 sudo -s
 su ansible
-cd /home/ansible/ansible/
+cd /home/ansible/ansible-project/
 ```
 
 #### Install base 
