@@ -5,7 +5,7 @@
 # Install collections with: `ansible-galaxy collection install -r requirements.yml -p ./collections/`
 roles:
   - name: base
-    src: https://gitlab.com/naturalis/lib/ansible-base-role.git
+    src: https://gitlab.com/naturalis/lib/ansible-role-base.git
     scm: git
   - name: users
     src: https://gitlab.com/naturalis/lib/ansible-users-sshkeys-role
