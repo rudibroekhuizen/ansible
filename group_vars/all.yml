@@ -5,19 +5,25 @@ unattended_origins_patterns:
 unattended_automatic_reboot: true
 unattended_automatic_reboot_time: "02:30"
 
-deploy_user_accounts: 1 
-add_userkeys_to_adminstrative_user: 1
+admin_users:
+  - username: rudi.broekhuizen
+    fullname: "Rudi Broekhuizen"
+    pubkey:
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDeRrVuojExYBWgIV7UlLfYLvzGpW9hSzrjl9qJ7Kb3E/x+kq2ruma3LXlvMzFXoCKJMYvqvXUFj2Dzwh+iJ2bCyh5ilWgTMLvAwzRl1LdAV8IbDVYNZGCHCzXkyxLMAEdxXMHVYl6N/q+RBP+HQCySpwOjv86c5PgXoL4BOnxLy5TAoxSsfvxRcHT42ThYK1C/R5QC8UoBdpJ1RBhQRjBJPMWp9zRyOafNwE7Iti15gKHp04bn9UGqHRTA1ul+Q6YEFzjoqUxe4VCHObM6BS/DpD++TPMXjzU+aeJ8tkxhmYkGRKYJx/KK3uaKPv+/EkODePvwTVshiQ8v9qOXx0YJ"
 
-administrative_users: 
-- username: ubuntu
-  shell: /bin/bash
-  privilege_group: adm
-  key_format: ssh-ed25519
-  public_key: AAAAC3NzaC1lZDI1NTE5AAAAIBfEfVYsx7SCKxrBbqUESWXvW3mcUurazxE8UJefZM5g awx@infra.naturalis.io
+#deploy_user_accounts: 1 
+#add_userkeys_to_adminstrative_user: 1
 
-users:
-- username: rudi.broekhuizen
-  shell: /bin/zsh
-  privilege_group: adm
-  public_key: AAAAB3NzaC1yc2EAAAADAQABAAABAQDeRrVuojExYBWgIV7UlLfYLvzGpW9hSzrjl9qJ7Kb3E/x+kq2ruma3LXlvMzFXoCKJMYvqvXUFj2Dzwh+iJ2bCyh5ilWgTMLvAwzRl1LdAV8IbDVYNZGCHCzXkyxLMAEdxXMHVYl6N/q+RBP+HQCySpwOjv86c5PgXoL4BOnxLy5TAoxSsfvxRcHT42ThYK1C/R5QC8UoBdpJ1RBhQRjBJPMWp9zRyOafNwE7Iti15gKHp04bn9UGqHRTA1ul+Q6YEFzjoqUxe4VCHObM6BS/DpD++TPMXjzU+aeJ8tkxhmYkGRKYJx/KK3uaKPv+/EkODePvwTVshiQ8v9qOXx0YJ
+#administrative_users: 
+#- username: ubuntu
+#  shell: /bin/bash
+#  privilege_group: adm
+#  key_format: ssh-ed25519
+#  public_key: AAAAC3NzaC1lZDI1NTE5AAAAIBfEfVYsx7SCKxrBbqUESWXvW3mcUurazxE8UJefZM5g awx@infra.naturalis.io
+
+#users:
+#- username: rudi.broekhuizen
+#  shell: /bin/zsh
+#  privilege_group: adm
+#  public_key: AAAAB3NzaC1yc2EAAAADAQABAAABAQDeRrVuojExYBWgIV7UlLfYLvzGpW9hSzrjl9qJ7Kb3E/x+kq2ruma3LXlvMzFXoCKJMYvqvXUFj2Dzwh+iJ2bCyh5ilWgTMLvAwzRl1LdAV8IbDVYNZGCHCzXkyxLMAEdxXMHVYl6N/q+RBP+HQCySpwOjv86c5PgXoL4BOnxLy5TAoxSsfvxRcHT42ThYK1C/R5QC8UoBdpJ1RBhQRjBJPMWp9zRyOafNwE7Iti15gKHp04bn9UGqHRTA1ul+Q6YEFzjoqUxe4VCHObM6BS/DpD++TPMXjzU+aeJ8tkxhmYkGRKYJx/KK3uaKPv+/EkODePvwTVshiQ8v9qOXx0YJ
 ...
