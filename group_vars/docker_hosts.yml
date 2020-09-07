@@ -1,0 +1,4 @@
+---
+docker__version: "19.03"
+docker__compose_version: "1.25"
+...
