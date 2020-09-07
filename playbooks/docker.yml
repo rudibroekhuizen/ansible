@@ -2,9 +2,9 @@
 #apt install python-pip
 #pip install docker
 
-- name: Install Docker
+- name: Docker and docker-compose
   hosts: docker_hosts
   become: yes
   roles:
-    - docker
+    - docker-compose
 ...
