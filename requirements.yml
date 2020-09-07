@@ -11,6 +11,10 @@ roles:
     src: https://gitlab.com/naturalis/lib/ansible-users-sshkeys-role
     scm: git
     version: 0.0.1
+  - name: docker-compose
+    src: https://gitlab.com/naturalis/lib/ansible-docker-compose
+    scm: git
+    version: dependencies
   - name: postgresql
     src: https://gitlab.com/naturalis/lib/ansible-postgresql
     scm: git
@@ -23,7 +27,7 @@ roles:
     src: geerlingguy.mysql
   - name: logrotate
     src: nickhammond.logrotate
-  - src: https://github.com/paulfantom/ansible-restic
+  - name: restic
+    src: https://github.com/paulfantom/ansible-restic
     version: 1f93948
-    name: restic
 ...
