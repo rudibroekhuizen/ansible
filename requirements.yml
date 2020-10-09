@@ -5,16 +5,17 @@
 # Install collections with: `ansible-galaxy collection install -r requirements.yml -p ./collections/`
 roles:
   - name: base
-    src: https://gitlab.com/naturalis/lib/ansible-role-base.git
+    src: https://gitlab.com/naturalis/lib/ansible-base-role
     scm: git
+    version: reboot
   - name: users
     src: https://gitlab.com/naturalis/lib/ansible-users-sshkeys-role
     scm: git
-    version: 0.0.1
+    version: distro
   - name: docker-compose
     src: https://gitlab.com/naturalis/lib/ansible-docker-compose
     scm: git
-    version: dependencies
+    version: multiple
   - name: postgresql
     src: https://gitlab.com/naturalis/lib/ansible-postgresql
     scm: git
