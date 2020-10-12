@@ -11,7 +11,7 @@ roles:
   - name: users
     src: https://gitlab.com/naturalis/lib/ansible-users-sshkeys-role
     scm: git
-    version: distro
+    version: master
   - name: docker-compose
     src: https://gitlab.com/naturalis/lib/ansible-docker-compose
     scm: git
