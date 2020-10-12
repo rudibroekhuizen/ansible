@@ -7,7 +7,7 @@ roles:
   - name: base
     src: https://gitlab.com/naturalis/lib/ansible-base-role
     scm: git
-    version: reboot
+    version: master
   - name: users
     src: https://gitlab.com/naturalis/lib/ansible-users-sshkeys-role
     scm: git
