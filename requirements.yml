@@ -15,7 +15,7 @@ roles:
   - name: docker-compose
     src: https://gitlab.com/naturalis/lib/ansible-docker-compose
     scm: git
-    version: multiple
+    version: master
   - name: postgresql
     src: https://gitlab.com/naturalis/lib/ansible-postgresql
     scm: git
