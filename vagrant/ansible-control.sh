@@ -10,6 +10,9 @@ apt-add-repository -y ppa:ansible/ansible
 apt-get update
 apt-get -y install ansible git
 
+# Add existing public keys from host to user vagrant
+cat /vagrant/authorized_keys >> /home/vagrant/.ssh/authorized_keys
+
 # Create Ansible user
 adduser --disabled-password --gecos "" $ANSIBLE_USER
 mkdir -p /home/$ANSIBLE_USER/.ssh
