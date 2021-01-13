@@ -34,5 +34,5 @@ ansible-playbook playbooks/users.yml -l psql1
 ```
 ### Login to vb-02 using ssh from host
 ```sh
-ssh 192.168.56.6 
+ssh vagrant@192.168.56.6 
 ```
