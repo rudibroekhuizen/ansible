@@ -7,6 +7,7 @@ Ansible point of departure.
 ```sh
 git clone https://github.com/rudibroekhuizen/ansible
 cd ansible/vagrant
+cp ~/.ssh/authorized_keys authorized_keys
 vagrant up
 ```
 
