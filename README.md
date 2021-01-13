@@ -11,9 +11,14 @@ cp ~/.ssh/authorized_keys authorized_keys
 vagrant up
 ```
 
-### Login to vb-01
+### Login to vb-01 using vagrant ssh
 ```bash
 vagrant ssh vb-01
+```
+
+### Login to vb-01 using ssh
+```bash
+ssh vagrant@192.168.56.5
 ```
 
 ### Change to user ansible
@@ -23,16 +28,7 @@ su ansible
 cd /home/ansible/ansible-project/
 ```
 
-### Install base 
+### Example: run playbook base 
 ```bash
 ansible-playbook playbooks/base.yml -l psql1
-```
-
-### Create users
-```
-ansible-playbook playbooks/users.yml -l psql1
-```
-### Login to vb-02 using ssh from host
-```sh
-ssh vagrant@192.168.56.6 
 ```
