@@ -14,3 +14,4 @@ chmod 600 /home/$ANSIBLE_USER/.ssh/authorized_keys
 
 # Add existing public keys from host to user vagrant
 cat /vagrant/authorized_keys >> /home/vagrant/.ssh/authorized_keys
+cat /vagrant/authorized_keys >> /home/ubuntu/.ssh/authorized_keys
